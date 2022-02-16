@@ -36,4 +36,5 @@ TODO: Write development instructions here
 
 ## Contributors
 
-- [Alex Piechowski](https://github.com/your-github-user) - creator and maintainer
+- [Rob Cole](https://github.com/robcole) - creator and maintainer
+- [Alex Piechowski](https://github.com/grepsedawk) - creator and maintainer
