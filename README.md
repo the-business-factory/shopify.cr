@@ -1,6 +1,6 @@
 # shopify
 
-TODO: Write a description here
+Crystal client for the Shopify API.
 
 ## Installation
 
@@ -9,7 +9,7 @@ TODO: Write a description here
    ```yaml
    dependencies:
      shopify:
-       github: your-github-user/shopify
+       github: the-business-factory/shopify.cr
    ```
 
 2. Run `shards install`
@@ -28,7 +28,7 @@ TODO: Write development instructions here
 
 ## Contributing
 
-1. Fork it (<https://github.com/your-github-user/shopify/fork>)
+1. Fork it (<https://github.com/the-business-factory/shopify/fork>)
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
