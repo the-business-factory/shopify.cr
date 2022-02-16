@@ -1,0 +1,9 @@
+name: shopify
+version: 0.1.0
+
+authors:
+  - Alex Piechowski <alex@piechowski.io>
+
+crystal: 1.3.0
+
+license: MIT
