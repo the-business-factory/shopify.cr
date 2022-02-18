@@ -1,4 +1,4 @@
-# shopify
+# shopify.cr
 
 Crystal client for the Shopify API.
 
