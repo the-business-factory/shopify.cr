@@ -1,0 +1,72 @@
+#!/usr/bin/env crystal
+
+require "http"
+
+require "../src/shopify"
+
+Shopify.configure do |config|
+  config.api_key = ENV["SHOPIFY_API_KEY"]
+  config.scope = "read_customers"
+  config.redirect_uri = "http://localhost:8080/oauth/callback"
+end
+
+struct Shopify::AuthRequest
+  property \
+    hmac : String,
+    shop : String,
+    timestamp : String
+
+  delegate api_key, scope, redirect_uri, to: Shopify.settings
+
+  def initialize(@hmac : String, @shop : String, @timestamp : String)
+  end
+
+  def self.from_params(params)
+    new(
+      hmac: params["hmac"],
+      shop: params["shop"],
+      timestamp: params["timestamp"]
+    )
+  end
+
+  def auth_url
+    "https://#{shop}/admin/oauth/authorize?client_id=#{api_key}&scope=#{scope}&redirect_uri=#{redirect_uri}"
+  end
+end
+
+code_received = false
+
+server = HTTP::Server.new do |context|
+  case context.request.path
+  when "/install"
+    Shopify::AuthRequest.from_params(
+      context.request.query_params
+    )
+    context.response.status_code = 302
+    context.response.headers["Location"] = Shopify::AuthRequest.from_params(
+      context.request.query_params
+    ).auth_url
+    context.response.content_type = "text/plain"
+    context.response.print "Redirecting to Shopify OAuth..."
+  when "/oauth/callback"
+    context.response.content_type = "text/plain"
+    context.response.print "Authorization Code: #{context.request.query_params["code"]}"
+    puts "Authorization code received: #{context.request.query_params["code"]}"
+    code_received = true
+  end
+end
+
+address = server.bind_tcp 8080
+puts "Set app URL to on http://#{address}/install"
+puts "Set allowed redirect URI to on http://#{address}/oauth/callback"
+
+spawn do
+  loop do
+    exit 0 if code_received
+
+    puts "Waiting for Shopify OAuth..."
+    sleep 5
+  end
+end
+
+server.listen
