@@ -172,7 +172,7 @@
   </h2>
   
     
-      <a href="https://github.com/the-business-factory/shopify.cr/blob/3598ff3a42614d07f11e6af8ce8794976e66b121/src/shopify/resources/order.cr#L4" target="_blank">
+      <a href="https://github.com/the-business-factory/shopify.cr/blob/d664545adbb5679f7cd7ed86fe91f1db3cb6786e/src/shopify/resources/order.cr#L4" target="_blank">
         shopify/resources/order.cr
       </a>
     
@@ -234,6 +234,13 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#create%28body%3AString%2Cdomain%3AString%2Cheaders%3AHTTP%3A%3AHeaders%3Dheaders%29-class-method" class="signature"><strong>.create</strong>(body : String, domain : String, headers : HTTP::Headers = headers)</a>
+        
+          <div class="summary"><p>Used to create one order.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#find%28id%3AInt64%2Cdomain%3AString%2Cheaders%3AHTTP%3A%3AHeaders%3Dheaders%29%3AShopify%3A%3AOrder-class-method" class="signature"><strong>.find</strong>(id : Int64, domain : String, headers : HTTP::Headers = headers) : Shopify::Order</a>
         
           <div class="summary"><p>Used to fetch one order.</p></div>
@@ -278,6 +285,13 @@
     
       <li class="entry-summary">
         <a href="#id%3D%28id%3AInt64%29-instance-method" class="signature"><strong>#id=</strong>(id : Int64)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#update%28body%3AString%29%3Aself-instance-method" class="signature"><strong>#update</strong>(body : String) : <span class="k">self</span></a>
+        
+          <div class="summary"><p>Under the covers, this just runs: <code>plaintext PUT /admin/api/2022-01/orders/{id}.json</code></p></div>
         
       </li>
     
@@ -384,7 +398,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/3598ff3a42614d07f11e6af8ce8794976e66b121/src/shopify/resources/order.cr#L4" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/d664545adbb5679f7cd7ed86fe91f1db3cb6786e/src/shopify/resources/order.cr#L4" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -424,7 +438,7 @@ directly instead of this method as it is more performant.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/3598ff3a42614d07f11e6af8ce8794976e66b121/src/shopify/resources/order.cr#L5" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/d664545adbb5679f7cd7ed86fe91f1db3cb6786e/src/shopify/resources/order.cr#L5" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -458,7 +472,7 @@ directly instead of this method as it is more performant.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/3598ff3a42614d07f11e6af8ce8794976e66b121/src/shopify/resources/order.cr#L5" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/d664545adbb5679f7cd7ed86fe91f1db3cb6786e/src/shopify/resources/order.cr#L5" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -486,7 +500,35 @@ directly instead of this method as it is more performant.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/3598ff3a42614d07f11e6af8ce8794976e66b121/src/shopify/resources/order.cr#L7" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/d664545adbb5679f7cd7ed86fe91f1db3cb6786e/src/shopify/resources/order.cr#L7" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="create(body:String,domain:String,headers:HTTP::Headers=headers)-class-method">
+      <div class="signature">
+        
+        def self.<strong>create</strong>(body : String, domain : String, headers : HTTP::Headers = headers)
+
+        <a class="method-permalink" href="#create%28body%3AString%2Cdomain%3AString%2Cheaders%3AHTTP%3A%3AHeaders%3Dheaders%29-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Used to create one order.</p>
+<p>Generally, this is used with <code><a href="../Shopify/Order.html#with%28store%3AStore%29-class-method">.with(store)</a></code>:</p>
+<pre><code class="language-crystal"><span class="t">Shopify</span><span class="t">::</span><span class="t">Order</span>.<span class="k">with</span>(store).create(body) <span class="c">#=&gt; Shopify::Order</span></code></pre>
+<p>But it can be used stand-alone, too:</p>
+<pre><code class="language-crystal"><span class="t">Shopify</span><span class="t">::</span><span class="t">Order</span>.create(body, domain, headers: headers) <span class="c">#=&gt; Shopify::Order</span></code></pre>
+<p>Under the covers, this just runs:</p>
+<pre><code class="language-plaintext">POST
+/admin/api/2022-01/orders.json</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/d664545adbb5679f7cd7ed86fe91f1db3cb6786e/src/shopify/resources/order.cr#L9" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -514,7 +556,7 @@ directly instead of this method as it is more performant.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/3598ff3a42614d07f11e6af8ce8794976e66b121/src/shopify/resources/order.cr#L6" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/d664545adbb5679f7cd7ed86fe91f1db3cb6786e/src/shopify/resources/order.cr#L6" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -530,7 +572,7 @@ directly instead of this method as it is more performant.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/3598ff3a42614d07f11e6af8ce8794976e66b121/src/shopify/resources/order.cr#L10" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/d664545adbb5679f7cd7ed86fe91f1db3cb6786e/src/shopify/resources/order.cr#L12" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -546,7 +588,7 @@ directly instead of this method as it is more performant.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/3598ff3a42614d07f11e6af8ce8794976e66b121/src/shopify/resources/order.cr#L4" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/d664545adbb5679f7cd7ed86fe91f1db3cb6786e/src/shopify/resources/order.cr#L4" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -582,7 +624,7 @@ directly instead of this method as it is more performant.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/3598ff3a42614d07f11e6af8ce8794976e66b121/src/shopify/resources/order.cr#L8" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/d664545adbb5679f7cd7ed86fe91f1db3cb6786e/src/shopify/resources/order.cr#L8" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -598,7 +640,7 @@ directly instead of this method as it is more performant.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/3598ff3a42614d07f11e6af8ce8794976e66b121/src/shopify/resources/order.cr#L14" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/d664545adbb5679f7cd7ed86fe91f1db3cb6786e/src/shopify/resources/order.cr#L16" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -614,7 +656,30 @@ directly instead of this method as it is more performant.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/3598ff3a42614d07f11e6af8ce8794976e66b121/src/shopify/resources/order.cr#L14" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/d664545adbb5679f7cd7ed86fe91f1db3cb6786e/src/shopify/resources/order.cr#L16" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="update(body:String):self-instance-method">
+      <div class="signature">
+        
+        def <strong>update</strong>(body : String) : <span class="k">self</span>
+
+        <a class="method-permalink" href="#update%28body%3AString%29%3Aself-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Under the covers, this just runs:</p>
+<pre><code class="language-plaintext">PUT
+/admin/api/2022-01/orders/{id}.json</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/d664545adbb5679f7cd7ed86fe91f1db3cb6786e/src/shopify/resources/order.cr#L10" target="_blank">View source</a>]
         
       </div>
     </div>
