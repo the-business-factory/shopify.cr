@@ -29,7 +29,7 @@ class Shopify::Store
       form: {
         "client_id"     => Shopify.settings.api_key,
         "client_secret" => Shopify.settings.secret,
-        "code"          => code.presence || raise Shopify::MissingAccessCode.new
+        "code"          => code.presence || raise Shopify::MissingAccessCode.new,
       }
     )
 

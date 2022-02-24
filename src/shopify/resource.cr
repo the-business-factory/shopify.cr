@@ -1,6 +1,7 @@
 require "../shopify"
 require "json"
 require "http/client"
+require "./erroring_response"
 
 abstract class Shopify::Resource
   include JSON::Serializable
@@ -71,7 +72,9 @@ abstract class Shopify::Resource
     # ```
     def self.find(id : Int64, domain : String, headers : HTTP::Headers = headers) : {{@type.id}}
       JSON::PullParser.new(
-        HTTP::Client.get(uri(domain, "/#{id}"), headers).body
+        ErroringResponse.new(
+          HTTP::Client.get(uri(domain, "/#{id}"), headers)
+        ).body
       ).try do |pull|
         pull.read_begin_object
         pull.read_object_key
@@ -138,9 +141,11 @@ abstract class Shopify::Resource
       headers : HTTP::Headers = headers,
       &block : self ->
     )
-      HTTP::Client.get(
-        next_page_uri || uri(domain),
-        headers
+      ErroringResponse.new(
+        HTTP::Client.get(
+          next_page_uri || uri(domain),
+          headers
+        )
       ).try do |response|
         channel = Channel(Nil).new
         spawn do
@@ -189,7 +194,9 @@ abstract class Shopify::Resource
     # ```
     def self.create(body : String, domain : String, headers : HTTP::Headers = headers)
       JSON::PullParser.new(
-        HTTP::Client.post(uri(domain), headers, body).body
+        ErroringResponse.new(
+          HTTP::Client.post(uri(domain), headers, body)
+        ).body
       ).try do |pull|
         pull.read_begin_object
         pull.read_object_key
@@ -218,7 +225,9 @@ abstract class Shopify::Resource
     # ```
     def self.count(domain : String, headers : HTTP::Headers = headers) : Int64
       JSON::PullParser.new(
-        HTTP::Client.get(uri(domain, "/count"), headers).body
+        ErroringResponse.new(
+          HTTP::Client.get(uri(domain, "/count"), headers)
+        ).body
       ).try do |pull|
         pull.read_begin_object
         pull.read_object_key
@@ -236,9 +245,11 @@ abstract class Shopify::Resource
     # ```
     def self.search(query : String, domain : String, headers : HTTP::Headers = headers)
       JSON::PullParser.new(
-        HTTP::Client.get(
-          uri(domain, "/search").tap &.query = "?query=#{query}",
-          headers
+        ErroringResponse.new(
+          HTTP::Client.get(
+            uri(domain, "/search").tap &.query = "?query=#{query}",
+            headers
+          )
         ).body
       ).try do |pull|
         pull.read_begin_object
@@ -268,13 +279,15 @@ abstract class Shopify::Resource
     # ```
     def update(body : String) : self
       JSON::PullParser.new(
-        HTTP::Client.put(
-          self.class.uri(store.shop, "/#{id}"),
-          HTTP::Headers{
-            "X-Shopify-Access-Token" => store.access_token,
-            "Content-Type"           => "application/json",
-          },
-          body
+        ErroringResponse.new(
+          HTTP::Client.put(
+            self.class.uri(store.shop, "/#{id}"),
+            HTTP::Headers{
+              "X-Shopify-Access-Token" => store.access_token,
+              "Content-Type"           => "application/json",
+            },
+            body
+          )
         ).body
       ).try do |pull|
         pull.read_begin_object
@@ -294,12 +307,14 @@ abstract class Shopify::Resource
     # /admin/api/2022-01/{{@type.id.split("::").last.downcase.id}}s/{id}.json
     # ```
     def delete
-      HTTP::Client.delete(
-        self.class.uri(store.shop, "/#{id}"),
-        HTTP::Headers{
-          "X-Shopify-Access-Token" => store.access_token,
-          "Content-Type"           => "application/json",
-        }
+      ErroringResponse.new(
+        HTTP::Client.delete(
+          self.class.uri(store.shop, "/#{id}"),
+          HTTP::Headers{
+            "X-Shopify-Access-Token" => store.access_token,
+            "Content-Type"           => "application/json",
+          }
+        )
       )
     end
   end

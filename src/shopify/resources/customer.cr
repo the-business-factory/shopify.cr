@@ -49,13 +49,15 @@ class Shopify::Customer < Shopify::Resource
   # ```
   def create_account_activation_url : URI
     JSON::PullParser.new(
-      HTTP::Client.post(
-        self.class.uri(store.shop, "/#{id}/account_activation_url"),
-        HTTP::Headers{
-          "X-Shopify-Access-Token" => store.access_token,
-          "Content-Type"           => "application/json",
-        },
-        "{}"
+      ErroringResponse.new(
+        HTTP::Client.post(
+          self.class.uri(store.shop, "/#{id}/account_activation_url"),
+          HTTP::Headers{
+            "X-Shopify-Access-Token" => store.access_token,
+            "Content-Type"           => "application/json",
+          },
+          "{}"
+        )
       ).body
     ).try do |pull|
       pull.read_begin_object
@@ -72,13 +74,15 @@ class Shopify::Customer < Shopify::Resource
   # ```
   def send_invite : Shopify::CustomerInvite
     JSON::PullParser.new(
-      HTTP::Client.post(
-        self.class.uri(store.shop, "/#{id}/send_invite"),
-        HTTP::Headers{
-          "X-Shopify-Access-Token" => store.access_token,
-          "Content-Type"           => "application/json",
-        },
-        "{\"customer_invite\":{}}"
+      ErroringResponse.new(
+        HTTP::Client.post(
+          self.class.uri(store.shop, "/#{id}/send_invite"),
+          HTTP::Headers{
+            "X-Shopify-Access-Token" => store.access_token,
+            "Content-Type"           => "application/json",
+          },
+          "{\"customer_invite\":{}}"
+        )
       ).body
     ).try do |pull|
       pull.read_begin_object
@@ -95,12 +99,14 @@ class Shopify::Customer < Shopify::Resource
   # ```
   def orders : Array(Shopify::Order)
     JSON::PullParser.new(
-      HTTP::Client.get(
-        self.class.uri(store.shop, "/#{id}/orders"),
-        HTTP::Headers{
-          "X-Shopify-Access-Token" => store.access_token,
-          "Content-Type"           => "application/json",
-        }
+      ErroringResponse.new(
+        HTTP::Client.get(
+          self.class.uri(store.shop, "/#{id}/orders"),
+          HTTP::Headers{
+            "X-Shopify-Access-Token" => store.access_token,
+            "Content-Type"           => "application/json",
+          }
+        )
       ).body
     ).try do |pull|
       pull.read_begin_object

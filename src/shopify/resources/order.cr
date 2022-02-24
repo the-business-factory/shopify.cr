@@ -22,13 +22,15 @@ class Shopify::Order < Shopify::Resource
   # ```
   def cancel : self
     JSON::PullParser.new(
-      HTTP::Client.post(
-        self.class.uri(store.shop, "/#{id}/cancel"),
-        HTTP::Headers{
-          "X-Shopify-Access-Token" => store.access_token,
-          "Content-Type"           => "application/json",
-        },
-        "{}"
+      ErroringResponse.new(
+        HTTP::Client.post(
+          self.class.uri(store.shop, "/#{id}/cancel"),
+          HTTP::Headers{
+            "X-Shopify-Access-Token" => store.access_token,
+            "Content-Type"           => "application/json",
+          },
+          "{}"
+        )
       ).body
     ).try do |pull|
       pull.read_begin_object
@@ -45,13 +47,15 @@ class Shopify::Order < Shopify::Resource
   # ```
   def close : self
     JSON::PullParser.new(
-      HTTP::Client.post(
-        self.class.uri(store.shop, "/#{id}/close"),
-        HTTP::Headers{
-          "X-Shopify-Access-Token" => store.access_token,
-          "Content-Type"           => "application/json",
-        },
-        "{}"
+      ErroringResponse.new(
+        HTTP::Client.post(
+          self.class.uri(store.shop, "/#{id}/close"),
+          HTTP::Headers{
+            "X-Shopify-Access-Token" => store.access_token,
+            "Content-Type"           => "application/json",
+          },
+          "{}"
+        )
       ).body
     ).try do |pull|
       pull.read_begin_object
@@ -68,13 +72,15 @@ class Shopify::Order < Shopify::Resource
   # ```
   def open : self
     JSON::PullParser.new(
-      HTTP::Client.post(
-        self.class.uri(store.shop, "/#{id}/open"),
-        HTTP::Headers{
-          "X-Shopify-Access-Token" => store.access_token,
-          "Content-Type"           => "application/json",
-        },
-        "{}"
+      ErroringResponse.new(
+        HTTP::Client.post(
+          self.class.uri(store.shop, "/#{id}/open"),
+          HTTP::Headers{
+            "X-Shopify-Access-Token" => store.access_token,
+            "Content-Type"           => "application/json",
+          },
+          "{}"
+        )
       ).body
     ).try do |pull|
       pull.read_begin_object
