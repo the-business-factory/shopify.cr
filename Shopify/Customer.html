@@ -173,7 +173,7 @@
   </h2>
   
     
-      <a href="https://github.com/the-business-factory/shopify.cr/blob/68874406c6782773e4b8ea2684760ca005bd46a4/src/shopify/resources/customer.cr#L5" target="_blank">
+      <a href="https://github.com/the-business-factory/shopify.cr/blob/7782db50f722f286b404b66b8eda79768050937e/src/shopify/resources/customer.cr#L5" target="_blank">
         shopify/resources/customer.cr
       </a>
     
@@ -214,7 +214,27 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
+        <a href="#all%28domain%3AString%2Cheaders%3AHTTP%3A%3AHeaders%3DHEADERS%29-class-method" class="signature"><strong>.all</strong>(domain : String, headers : HTTP::Headers = <span class="t">HEADERS</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#all%28domain%3AString%2Cnext_page_uri%3AString%3F%3Dnil%2Cheaders%3AHTTP%3A%3AHeaders%3DHEADERS%2C%26block%3Aself-%3E%29-class-method" class="signature"><strong>.all</strong>(domain : String, next_page_uri : String? = <span class="n">nil</span>, headers : HTTP::Headers = <span class="t">HEADERS</span>, &block : <span class="k">self</span> -> )</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#find%28id%3AInt64%2Cdomain%3AString%2Cheaders%3AHTTP%3A%3AHeaders%3DHEADERS%29-class-method" class="signature"><strong>.find</strong>(id : Int64, domain : String, headers : HTTP::Headers = <span class="t">HEADERS</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#uri%28domain%3AString%2Cpath%3AString%3D%22%22%29%3AURI-class-method" class="signature"><strong>.uri</strong>(domain : String, path : String = <span class="s">&quot;&quot;</span>) : URI</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#with%28store%3AStore%29-class-method" class="signature"><strong>.with</strong>(store : Store)</a>
         
       </li>
     
@@ -517,25 +537,6 @@
 
     
 
-  <h3>Class methods inherited from class <code><a href="../Shopify/Resource.html">Shopify::Resource</a></code></h3>
-  
-  
-    <a href="../Shopify/Resource.html#all%28domain%3AString%2Cheaders%3AHTTP%3A%3AHeaders%3DHEADERS%29-class-method" class="tooltip">
-      <span>all(domain : String, headers : HTTP::Headers = <span class="t">HEADERS</span>)<br/>all(domain : String, next_page_uri : String? = <span class="n">nil</span>, headers : HTTP::Headers = <span class="t">HEADERS</span>, &block : <span class="k">self</span> -> )</span>
-    all</a>, 
-    
-  
-    <a href="../Shopify/Resource.html#find%28id%3AInt64%2Cdomain%3AString%2Cheaders%3AHTTP%3A%3AHeaders%3DHEADERS%29-class-method" class="tooltip">
-      <span>find(id : Int64, domain : String, headers : HTTP::Headers = <span class="t">HEADERS</span>)</span>
-    find</a>, 
-    
-  
-    <a href="../Shopify/Resource.html#with%28store%3AStore%29-class-method" class="tooltip">
-      <span>with(store : Store)</span>
-    with</a>
-    
-  
-
 
   
     
@@ -591,7 +592,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/68874406c6782773e4b8ea2684760ca005bd46a4/src/shopify/resources/customer.cr#L5" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7782db50f722f286b404b66b8eda79768050937e/src/shopify/resources/customer.cr#L5" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -608,6 +609,54 @@
     Class Method Detail
   </h2>
   
+    <div class="entry-detail" id="all(domain:String,headers:HTTP::Headers=HEADERS)-class-method">
+      <div class="signature">
+        
+        def self.<strong>all</strong>(domain : String, headers : HTTP::Headers = <span class="t">HEADERS</span>)
+
+        <a class="method-permalink" href="#all%28domain%3AString%2Cheaders%3AHTTP%3A%3AHeaders%3DHEADERS%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7782db50f722f286b404b66b8eda79768050937e/src/shopify/resources/customer.cr#L5" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="all(domain:String,next_page_uri:String?=nil,headers:HTTP::Headers=HEADERS,&amp;block:self-&gt;)-class-method">
+      <div class="signature">
+        
+        def self.<strong>all</strong>(domain : String, next_page_uri : String? = <span class="n">nil</span>, headers : HTTP::Headers = <span class="t">HEADERS</span>, &block : <span class="k">self</span> -> )
+
+        <a class="method-permalink" href="#all%28domain%3AString%2Cnext_page_uri%3AString%3F%3Dnil%2Cheaders%3AHTTP%3A%3AHeaders%3DHEADERS%2C%26block%3Aself-%3E%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7782db50f722f286b404b66b8eda79768050937e/src/shopify/resources/customer.cr#L5" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="find(id:Int64,domain:String,headers:HTTP::Headers=HEADERS)-class-method">
+      <div class="signature">
+        
+        def self.<strong>find</strong>(id : Int64, domain : String, headers : HTTP::Headers = <span class="t">HEADERS</span>)
+
+        <a class="method-permalink" href="#find%28id%3AInt64%2Cdomain%3AString%2Cheaders%3AHTTP%3A%3AHeaders%3DHEADERS%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7782db50f722f286b404b66b8eda79768050937e/src/shopify/resources/customer.cr#L5" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
     <div class="entry-detail" id="uri(domain:String,path:String=&quot;&quot;):URI-class-method">
       <div class="signature">
         
@@ -619,7 +668,23 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/68874406c6782773e4b8ea2684760ca005bd46a4/src/shopify/resources/customer.cr#L33" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7782db50f722f286b404b66b8eda79768050937e/src/shopify/resources/customer.cr#L33" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="with(store:Store)-class-method">
+      <div class="signature">
+        
+        def self.<strong>with</strong>(store : <a href="../Shopify/Store.html">Store</a>)
+
+        <a class="method-permalink" href="#with%28store%3AStore%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7782db50f722f286b404b66b8eda79768050937e/src/shopify/resources/customer.cr#L5" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -647,7 +712,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/68874406c6782773e4b8ea2684760ca005bd46a4/src/shopify/resources/customer.cr#L8" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7782db50f722f286b404b66b8eda79768050937e/src/shopify/resources/customer.cr#L8" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -663,7 +728,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/68874406c6782773e4b8ea2684760ca005bd46a4/src/shopify/resources/customer.cr#L8" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7782db50f722f286b404b66b8eda79768050937e/src/shopify/resources/customer.cr#L8" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -679,7 +744,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/68874406c6782773e4b8ea2684760ca005bd46a4/src/shopify/resources/customer.cr#L26" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7782db50f722f286b404b66b8eda79768050937e/src/shopify/resources/customer.cr#L26" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -695,7 +760,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/68874406c6782773e4b8ea2684760ca005bd46a4/src/shopify/resources/customer.cr#L26" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7782db50f722f286b404b66b8eda79768050937e/src/shopify/resources/customer.cr#L26" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -711,7 +776,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/68874406c6782773e4b8ea2684760ca005bd46a4/src/shopify/resources/customer.cr#L25" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7782db50f722f286b404b66b8eda79768050937e/src/shopify/resources/customer.cr#L25" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -727,7 +792,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/68874406c6782773e4b8ea2684760ca005bd46a4/src/shopify/resources/customer.cr#L25" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7782db50f722f286b404b66b8eda79768050937e/src/shopify/resources/customer.cr#L25" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -743,7 +808,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/68874406c6782773e4b8ea2684760ca005bd46a4/src/shopify/resources/customer.cr#L30" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7782db50f722f286b404b66b8eda79768050937e/src/shopify/resources/customer.cr#L30" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -759,7 +824,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/68874406c6782773e4b8ea2684760ca005bd46a4/src/shopify/resources/customer.cr#L30" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7782db50f722f286b404b66b8eda79768050937e/src/shopify/resources/customer.cr#L30" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -775,7 +840,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/68874406c6782773e4b8ea2684760ca005bd46a4/src/shopify/resources/customer.cr#L9" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7782db50f722f286b404b66b8eda79768050937e/src/shopify/resources/customer.cr#L9" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -791,7 +856,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/68874406c6782773e4b8ea2684760ca005bd46a4/src/shopify/resources/customer.cr#L9" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7782db50f722f286b404b66b8eda79768050937e/src/shopify/resources/customer.cr#L9" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -807,7 +872,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/68874406c6782773e4b8ea2684760ca005bd46a4/src/shopify/resources/customer.cr#L24" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7782db50f722f286b404b66b8eda79768050937e/src/shopify/resources/customer.cr#L24" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -823,7 +888,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/68874406c6782773e4b8ea2684760ca005bd46a4/src/shopify/resources/customer.cr#L24" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7782db50f722f286b404b66b8eda79768050937e/src/shopify/resources/customer.cr#L24" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -839,7 +904,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/68874406c6782773e4b8ea2684760ca005bd46a4/src/shopify/resources/customer.cr#L31" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7782db50f722f286b404b66b8eda79768050937e/src/shopify/resources/customer.cr#L31" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -855,7 +920,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/68874406c6782773e4b8ea2684760ca005bd46a4/src/shopify/resources/customer.cr#L31" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7782db50f722f286b404b66b8eda79768050937e/src/shopify/resources/customer.cr#L31" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -871,7 +936,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/68874406c6782773e4b8ea2684760ca005bd46a4/src/shopify/resources/customer.cr#L7" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7782db50f722f286b404b66b8eda79768050937e/src/shopify/resources/customer.cr#L7" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -887,7 +952,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/68874406c6782773e4b8ea2684760ca005bd46a4/src/shopify/resources/customer.cr#L7" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7782db50f722f286b404b66b8eda79768050937e/src/shopify/resources/customer.cr#L7" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -903,7 +968,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/68874406c6782773e4b8ea2684760ca005bd46a4/src/shopify/resources/customer.cr#L11" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7782db50f722f286b404b66b8eda79768050937e/src/shopify/resources/customer.cr#L11" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -919,7 +984,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/68874406c6782773e4b8ea2684760ca005bd46a4/src/shopify/resources/customer.cr#L11" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7782db50f722f286b404b66b8eda79768050937e/src/shopify/resources/customer.cr#L11" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -935,7 +1000,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/68874406c6782773e4b8ea2684760ca005bd46a4/src/shopify/resources/customer.cr#L6" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7782db50f722f286b404b66b8eda79768050937e/src/shopify/resources/customer.cr#L6" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -951,7 +1016,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/68874406c6782773e4b8ea2684760ca005bd46a4/src/shopify/resources/customer.cr#L6" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7782db50f722f286b404b66b8eda79768050937e/src/shopify/resources/customer.cr#L6" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -967,7 +1032,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/68874406c6782773e4b8ea2684760ca005bd46a4/src/shopify/resources/customer.cr#L12" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7782db50f722f286b404b66b8eda79768050937e/src/shopify/resources/customer.cr#L12" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -983,7 +1048,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/68874406c6782773e4b8ea2684760ca005bd46a4/src/shopify/resources/customer.cr#L12" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7782db50f722f286b404b66b8eda79768050937e/src/shopify/resources/customer.cr#L12" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -999,7 +1064,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/68874406c6782773e4b8ea2684760ca005bd46a4/src/shopify/resources/customer.cr#L16" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7782db50f722f286b404b66b8eda79768050937e/src/shopify/resources/customer.cr#L16" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1015,7 +1080,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/68874406c6782773e4b8ea2684760ca005bd46a4/src/shopify/resources/customer.cr#L16" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7782db50f722f286b404b66b8eda79768050937e/src/shopify/resources/customer.cr#L16" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1031,7 +1096,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/68874406c6782773e4b8ea2684760ca005bd46a4/src/shopify/resources/customer.cr#L23" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7782db50f722f286b404b66b8eda79768050937e/src/shopify/resources/customer.cr#L23" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1047,7 +1112,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/68874406c6782773e4b8ea2684760ca005bd46a4/src/shopify/resources/customer.cr#L23" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7782db50f722f286b404b66b8eda79768050937e/src/shopify/resources/customer.cr#L23" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1063,7 +1128,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/68874406c6782773e4b8ea2684760ca005bd46a4/src/shopify/resources/customer.cr#L27" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7782db50f722f286b404b66b8eda79768050937e/src/shopify/resources/customer.cr#L27" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1079,7 +1144,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/68874406c6782773e4b8ea2684760ca005bd46a4/src/shopify/resources/customer.cr#L27" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7782db50f722f286b404b66b8eda79768050937e/src/shopify/resources/customer.cr#L27" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1095,7 +1160,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/68874406c6782773e4b8ea2684760ca005bd46a4/src/shopify/resources/customer.cr#L19" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7782db50f722f286b404b66b8eda79768050937e/src/shopify/resources/customer.cr#L19" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1111,7 +1176,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/68874406c6782773e4b8ea2684760ca005bd46a4/src/shopify/resources/customer.cr#L19" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7782db50f722f286b404b66b8eda79768050937e/src/shopify/resources/customer.cr#L19" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1127,7 +1192,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/68874406c6782773e4b8ea2684760ca005bd46a4/src/shopify/resources/customer.cr#L17" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7782db50f722f286b404b66b8eda79768050937e/src/shopify/resources/customer.cr#L17" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1143,7 +1208,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/68874406c6782773e4b8ea2684760ca005bd46a4/src/shopify/resources/customer.cr#L17" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7782db50f722f286b404b66b8eda79768050937e/src/shopify/resources/customer.cr#L17" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1159,7 +1224,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/68874406c6782773e4b8ea2684760ca005bd46a4/src/shopify/resources/customer.cr#L13" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7782db50f722f286b404b66b8eda79768050937e/src/shopify/resources/customer.cr#L13" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1175,7 +1240,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/68874406c6782773e4b8ea2684760ca005bd46a4/src/shopify/resources/customer.cr#L13" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7782db50f722f286b404b66b8eda79768050937e/src/shopify/resources/customer.cr#L13" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1191,7 +1256,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/68874406c6782773e4b8ea2684760ca005bd46a4/src/shopify/resources/customer.cr#L21" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7782db50f722f286b404b66b8eda79768050937e/src/shopify/resources/customer.cr#L21" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1207,7 +1272,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/68874406c6782773e4b8ea2684760ca005bd46a4/src/shopify/resources/customer.cr#L21" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7782db50f722f286b404b66b8eda79768050937e/src/shopify/resources/customer.cr#L21" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1223,7 +1288,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/68874406c6782773e4b8ea2684760ca005bd46a4/src/shopify/resources/customer.cr#L29" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7782db50f722f286b404b66b8eda79768050937e/src/shopify/resources/customer.cr#L29" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1239,7 +1304,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/68874406c6782773e4b8ea2684760ca005bd46a4/src/shopify/resources/customer.cr#L29" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7782db50f722f286b404b66b8eda79768050937e/src/shopify/resources/customer.cr#L29" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1255,7 +1320,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/68874406c6782773e4b8ea2684760ca005bd46a4/src/shopify/resources/customer.cr#L14" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7782db50f722f286b404b66b8eda79768050937e/src/shopify/resources/customer.cr#L14" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1271,7 +1336,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/68874406c6782773e4b8ea2684760ca005bd46a4/src/shopify/resources/customer.cr#L14" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7782db50f722f286b404b66b8eda79768050937e/src/shopify/resources/customer.cr#L14" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1287,7 +1352,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/68874406c6782773e4b8ea2684760ca005bd46a4/src/shopify/resources/customer.cr#L22" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7782db50f722f286b404b66b8eda79768050937e/src/shopify/resources/customer.cr#L22" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1303,7 +1368,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/68874406c6782773e4b8ea2684760ca005bd46a4/src/shopify/resources/customer.cr#L22" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7782db50f722f286b404b66b8eda79768050937e/src/shopify/resources/customer.cr#L22" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1319,7 +1384,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/68874406c6782773e4b8ea2684760ca005bd46a4/src/shopify/resources/customer.cr#L20" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7782db50f722f286b404b66b8eda79768050937e/src/shopify/resources/customer.cr#L20" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1335,7 +1400,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/68874406c6782773e4b8ea2684760ca005bd46a4/src/shopify/resources/customer.cr#L20" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7782db50f722f286b404b66b8eda79768050937e/src/shopify/resources/customer.cr#L20" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1351,7 +1416,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/68874406c6782773e4b8ea2684760ca005bd46a4/src/shopify/resources/customer.cr#L28" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7782db50f722f286b404b66b8eda79768050937e/src/shopify/resources/customer.cr#L28" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1367,7 +1432,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/68874406c6782773e4b8ea2684760ca005bd46a4/src/shopify/resources/customer.cr#L28" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7782db50f722f286b404b66b8eda79768050937e/src/shopify/resources/customer.cr#L28" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1383,7 +1448,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/68874406c6782773e4b8ea2684760ca005bd46a4/src/shopify/resources/customer.cr#L15" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7782db50f722f286b404b66b8eda79768050937e/src/shopify/resources/customer.cr#L15" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1399,7 +1464,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/68874406c6782773e4b8ea2684760ca005bd46a4/src/shopify/resources/customer.cr#L15" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7782db50f722f286b404b66b8eda79768050937e/src/shopify/resources/customer.cr#L15" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1415,7 +1480,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/68874406c6782773e4b8ea2684760ca005bd46a4/src/shopify/resources/customer.cr#L10" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7782db50f722f286b404b66b8eda79768050937e/src/shopify/resources/customer.cr#L10" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1431,7 +1496,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/68874406c6782773e4b8ea2684760ca005bd46a4/src/shopify/resources/customer.cr#L10" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7782db50f722f286b404b66b8eda79768050937e/src/shopify/resources/customer.cr#L10" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1447,7 +1512,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/68874406c6782773e4b8ea2684760ca005bd46a4/src/shopify/resources/customer.cr#L18" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7782db50f722f286b404b66b8eda79768050937e/src/shopify/resources/customer.cr#L18" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1463,7 +1528,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/68874406c6782773e4b8ea2684760ca005bd46a4/src/shopify/resources/customer.cr#L18" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7782db50f722f286b404b66b8eda79768050937e/src/shopify/resources/customer.cr#L18" target="_blank">View source</a>]
         
       </div>
     </div>
