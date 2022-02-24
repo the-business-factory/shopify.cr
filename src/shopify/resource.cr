@@ -195,4 +195,20 @@ abstract class Shopify::Resource
       end
     end
   end
+
+  # Under the covers, this just runs:
+  # ```plaintext
+  # GET
+  # /admin/api/2022-01/customers/count.json
+  # ```
+  def self.count(domain : String, headers : HTTP::Headers = headers) : Int64
+    JSON::PullParser.new(
+      HTTP::Client.get(uri(domain, "/count"), headers).body
+    ).try do |pull|
+      pull.read_begin_object
+      pull.read_object_key
+
+      pull.read_int
+    end
+  end
 end

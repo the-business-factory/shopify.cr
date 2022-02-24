@@ -25,4 +25,8 @@ class Shopify::WithStore(TResource)
   def create(body : String)
     TResource.create(body, @store.shop, new_headers).tap &.store=(@store)
   end
+
+  def count
+    TResource.count(@store.shop, new_headers)
+  end
 end
