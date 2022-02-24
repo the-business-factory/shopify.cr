@@ -13,7 +13,7 @@
 <script type="text/javascript" src="../js/doc.js"></script>
 
   <meta name="repository-name" content="shopify">
-  <title>Shopify::MissingAccessCode - shopify main</title>
+  <title>Shopify::ErroringResponse - shopify main</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../";
   </script>
@@ -76,7 +76,7 @@
       
     </li>
   
-  <li class=" " data-id="shopify/Shopify/ErroringResponse" data-name="shopify::erroringresponse">
+  <li class=" current" data-id="shopify/Shopify/ErroringResponse" data-name="shopify::erroringresponse">
       <a href="../Shopify/ErroringResponse.html">ErroringResponse</a>
       
     </li>
@@ -91,7 +91,7 @@
       
     </li>
   
-  <li class=" current" data-id="shopify/Shopify/MissingAccessCode" data-name="shopify::missingaccesscode">
+  <li class=" " data-id="shopify/Shopify/MissingAccessCode" data-name="shopify::missingaccesscode">
       <a href="../Shopify/MissingAccessCode.html">MissingAccessCode</a>
       
     </li>
@@ -160,12 +160,12 @@
 <div class="main-content">
 <h1 class="type-name">
 
-  <span class="kind">class</span> Shopify::MissingAccessCode
+  <span class="kind">class</span> Shopify::ErroringResponse
 
 </h1>
 
 
-  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Shopify/MissingAccessCode.html">Shopify::MissingAccessCode</a></li><li class="superclass">Exception</li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Shopify/ErroringResponse.html">Shopify::ErroringResponse</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
 
 
 
@@ -193,8 +193,8 @@
   </h2>
   
     
-      <a href="https://github.com/the-business-factory/shopify.cr/blob/38056ae43d57157d23965f78b074e8ec9281e0d5/src/shopify/auth/store.cr#L24" target="_blank">
-        shopify/auth/store.cr
+      <a href="https://github.com/the-business-factory/shopify.cr/blob/38056ae43d57157d23965f78b074e8ec9281e0d5/src/shopify/erroring_response.cr#L13" target="_blank">
+        shopify/erroring_response.cr
       </a>
     
     <br/>
@@ -204,11 +204,45 @@
 
 
 
+  <h2>
+    <a id="constructors" class="anchor" href="#constructors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructors
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new%28response%3AHTTP%3A%3AClient%3A%3AResponse%29-class-method" class="signature"><strong>.new</strong>(response : HTTP::Client::Response)</a>
+        
+      </li>
+    
+  </ul>
 
 
 
 
 
+
+
+  <h2>
+    <a id="macro-summary" class="anchor" href="#macro-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Macro Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#method_missing%28call%29-macro" class="signature"><strong>method_missing</strong>(call)</a>
+        
+      </li>
+    
+  </ul>
 
 
 
@@ -234,24 +268,66 @@
 
 
   
-    
-
-
-    
-
-
-    
-
-
-  
 </div>
 
 
+  <h2>
+    <a id="constructor-detail" class="anchor" href="#constructor-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructor Detail
+  </h2>
+  
+    <div class="entry-detail" id="new(response:HTTP::Client::Response)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(response : HTTP::Client::Response)
+
+        <a class="method-permalink" href="#new%28response%3AHTTP%3A%3AClient%3A%3AResponse%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/38056ae43d57157d23965f78b074e8ec9281e0d5/src/shopify/erroring_response.cr#L14" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
 
 
 
 
 
+
+
+  <h2>
+    <a id="macro-detail" class="anchor" href="#macro-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Macro Detail
+  </h2>
+  
+    <div class="entry-detail" id="method_missing(call)-macro">
+      <div class="signature">
+        
+        macro <strong>method_missing</strong>(call)
+
+        <a class="method-permalink" href="#method_missing%28call%29-macro">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/38056ae43d57157d23965f78b074e8ec9281e0d5/src/shopify/erroring_response.cr#L31" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
 
 
 </div>
