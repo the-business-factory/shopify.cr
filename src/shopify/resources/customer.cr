@@ -115,6 +115,10 @@ class Shopify::Customer < Shopify::Resource
     end
   end
 
+  # Sample Body from [Shopify Docs](https://shopify.dev/api/admin-rest/2022-01/resources/customer#put-customers-customer-id):
+  # ```plaintext
+  # {"id":207119551,"email":"changed@example.com","note":"Customer is great"}}
+  # ```
   # Under the covers, this just runs:
   # ```plaintext
   # PUT
