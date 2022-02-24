@@ -172,7 +172,7 @@
   </h2>
   
     
-      <a href="https://github.com/the-business-factory/shopify.cr/blob/7a7dc9001371f53810c7bcbb8836935c1c22980a/src/shopify/resources/order.cr#L4" target="_blank">
+      <a href="https://github.com/the-business-factory/shopify.cr/blob/620142262ceac6d4d3f376e278812d9d02623440/src/shopify/resources/order.cr#L4" target="_blank">
         shopify/resources/order.cr
       </a>
     
@@ -230,6 +230,13 @@
         <a href="#count%28domain%3AString%2Cheaders%3AHTTP%3A%3AHeaders%3Dheaders%29%3AInt64-class-method" class="signature"><strong>.count</strong>(domain : String, headers : HTTP::Headers = headers) : Int64</a>
         
           <div class="summary"><p>Used to get a count of all orders.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#find%28id%3AInt64%2Cdomain%3AString%2Cheaders%3AHTTP%3A%3AHeaders%3Dheaders%29%3AShopify%3A%3AOrder-class-method" class="signature"><strong>.find</strong>(id : Int64, domain : String, headers : HTTP::Headers = headers) : Shopify::Order</a>
+        
+          <div class="summary"><p>Used to fetch one order.</p></div>
         
       </li>
     
@@ -377,7 +384,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7a7dc9001371f53810c7bcbb8836935c1c22980a/src/shopify/resources/order.cr#L4" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/620142262ceac6d4d3f376e278812d9d02623440/src/shopify/resources/order.cr#L4" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -417,7 +424,7 @@ directly instead of this method as it is more performant.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7a7dc9001371f53810c7bcbb8836935c1c22980a/src/shopify/resources/order.cr#L5" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/620142262ceac6d4d3f376e278812d9d02623440/src/shopify/resources/order.cr#L5" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -451,7 +458,7 @@ directly instead of this method as it is more performant.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7a7dc9001371f53810c7bcbb8836935c1c22980a/src/shopify/resources/order.cr#L5" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/620142262ceac6d4d3f376e278812d9d02623440/src/shopify/resources/order.cr#L5" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -479,7 +486,35 @@ directly instead of this method as it is more performant.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7a7dc9001371f53810c7bcbb8836935c1c22980a/src/shopify/resources/order.cr#L6" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/620142262ceac6d4d3f376e278812d9d02623440/src/shopify/resources/order.cr#L7" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="find(id:Int64,domain:String,headers:HTTP::Headers=headers):Shopify::Order-class-method">
+      <div class="signature">
+        
+        def self.<strong>find</strong>(id : Int64, domain : String, headers : HTTP::Headers = headers) : <a href="../Shopify/Order.html">Shopify::Order</a>
+
+        <a class="method-permalink" href="#find%28id%3AInt64%2Cdomain%3AString%2Cheaders%3AHTTP%3A%3AHeaders%3Dheaders%29%3AShopify%3A%3AOrder-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Used to fetch one order.</p>
+<p>Generally, this is used with <code><a href="../Shopify/Order.html#with%28store%3AStore%29-class-method">.with(store)</a></code>:</p>
+<pre><code class="language-crystal"><span class="t">Shopify</span><span class="t">::</span><span class="t">Order</span>.<span class="k">with</span>(store).find(id) <span class="c">#=&gt; Shopify::Order</span></code></pre>
+<p>But it can be used stand-alone, too:</p>
+<pre><code class="language-crystal"><span class="t">Shopify</span><span class="t">::</span><span class="t">Order</span>.find(id, domain, headers: headers) <span class="c">#=&gt; Shopify::Order</span></code></pre>
+<p>Under the covers, this just runs:</p>
+<pre><code class="language-plaintext">GET
+/admin/api/2022-01/orders/{id}.json</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/620142262ceac6d4d3f376e278812d9d02623440/src/shopify/resources/order.cr#L6" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -495,7 +530,7 @@ directly instead of this method as it is more performant.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7a7dc9001371f53810c7bcbb8836935c1c22980a/src/shopify/resources/order.cr#L9" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/620142262ceac6d4d3f376e278812d9d02623440/src/shopify/resources/order.cr#L10" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -511,7 +546,7 @@ directly instead of this method as it is more performant.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7a7dc9001371f53810c7bcbb8836935c1c22980a/src/shopify/resources/order.cr#L4" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/620142262ceac6d4d3f376e278812d9d02623440/src/shopify/resources/order.cr#L4" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -547,7 +582,7 @@ directly instead of this method as it is more performant.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7a7dc9001371f53810c7bcbb8836935c1c22980a/src/shopify/resources/order.cr#L7" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/620142262ceac6d4d3f376e278812d9d02623440/src/shopify/resources/order.cr#L8" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -563,7 +598,7 @@ directly instead of this method as it is more performant.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7a7dc9001371f53810c7bcbb8836935c1c22980a/src/shopify/resources/order.cr#L13" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/620142262ceac6d4d3f376e278812d9d02623440/src/shopify/resources/order.cr#L14" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -579,7 +614,7 @@ directly instead of this method as it is more performant.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7a7dc9001371f53810c7bcbb8836935c1c22980a/src/shopify/resources/order.cr#L13" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/620142262ceac6d4d3f376e278812d9d02623440/src/shopify/resources/order.cr#L14" target="_blank">View source</a>]
         
       </div>
     </div>
