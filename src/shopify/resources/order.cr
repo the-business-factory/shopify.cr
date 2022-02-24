@@ -6,6 +6,8 @@ class Shopify::Order < Shopify::Resource
   findable
   countable
   deletable
+  creatable
+  updatable
 
   def self.uri(domain : String, path : String = "") : URI
     URI.parse "https://#{domain}/admin/api/2022-01/orders#{path}.json"
