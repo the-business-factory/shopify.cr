@@ -224,4 +224,28 @@ abstract class Shopify::Resource
       end
     end
   end
+
+  # Under the covers, this just runs:
+  # ```plaintext
+  # GET
+  # /admin/api/2022-01/customers/search.json?query=
+  # ```
+  def self.search(query : String, domain : String, headers : HTTP::Headers = headers)
+    JSON::PullParser.new(
+      HTTP::Client.get(
+        uri(domain, "/search").tap &.query= "?query=#{query}",
+          headers
+      ).body
+    ).try do |pull|
+      pull.read_begin_object
+      pull.read_object_key
+
+      resources = [] of self
+      pull.read_array do
+        resources << from_json(pull.read_raw)
+      end
+
+      resources
+    end
+  end
 end

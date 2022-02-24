@@ -28,6 +28,10 @@ class Shopify::WithStore(TResource)
     TResource.create(body, @store.shop, new_headers).tap &.store=(@store)
   end
 
+  def search(query : String)
+    TResource.search(query, @store.shop, new_headers).map &.tap(&.store=(@store))
+  end
+
   def count
     TResource.count(@store.shop, new_headers)
   end
