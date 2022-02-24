@@ -7,6 +7,9 @@ class Shopify::Customer < Shopify::Resource
   indexable
   creatable
 
+  @[JSON::Field(ignore: true)]
+  property store : Store = Store.new("unknown.myshopify.com")
+
   property id : Int64
   property email : String
   property accepts_marketing : Bool
@@ -36,5 +39,28 @@ class Shopify::Customer < Shopify::Resource
 
   def self.uri(domain : String, path : String = "") : URI
     URI.parse "https://#{domain}/admin/api/2022-01/customers#{path}.json"
+  end
+
+    # Under the covers, this just runs:
+    # ```plaintext
+    # POST
+    # /admin/api/2022-01/customers/{id}/account_activation_url.json
+    # ```
+  def create_account_activation_url : URI
+    JSON::PullParser.new(
+      HTTP::Client.post(
+        self.class.uri(store.shop, "/#{id}/account_activation_url"),
+        HTTP::Headers{
+          "X-Shopify-Access-Token" => store.access_token,
+          "Content-Type"           => "application/json",
+        },
+        "{}"
+      ).body
+    ).try do |pull|
+      pull.read_begin_object
+      pull.read_object_key
+
+      URI.parse pull.read_string
+    end
   end
 end

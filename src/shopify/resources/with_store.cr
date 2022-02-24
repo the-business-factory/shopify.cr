@@ -11,18 +11,18 @@ class Shopify::WithStore(T)
   forward_missing_to T
 
   def all
-    T.all(@store.shop, new_headers)
+    T.all(@store.shop, new_headers).tap &.store=(@store)
   end
 
   def all(page : String? = nil, &block : T ->)
-    T.all(@store.shop, page, new_headers, &block)
+    T.all(@store.shop, page, new_headers, &block).tap &.store=(@store)
   end
 
   def find(id)
-    T.find(id, @store.shop, new_headers)
+    T.find(id, @store.shop, new_headers).tap &.store=(@store)
   end
 
   def create(body : String)
-    T.create(body, @store.shop, new_headers)
+    T.create(body, @store.shop, new_headers).tap &.store=(@store)
   end
 end
