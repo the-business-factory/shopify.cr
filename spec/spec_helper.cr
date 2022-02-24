@@ -1,4 +1,3 @@
-require "spec"
 require "../src/shopify"
 require "spectator"
 require "vcr"

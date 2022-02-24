@@ -1,6 +1,6 @@
 require "./spec_helper"
 
-describe Shopify do
+Spectator.describe Shopify do
   it "can be configured" do
     Shopify.configure do |config|
       config.api_key = "my_api_key"
@@ -9,9 +9,9 @@ describe Shopify do
       config.redirect_uri = "http://localhost:3000/auth/shopify/callback"
     end
 
-    Shopify.settings.api_key.should eq "my_api_key"
-    Shopify.settings.secret.should eq "my_secret"
-    Shopify.settings.scope.should eq "read_products,write_products"
-    Shopify.settings.redirect_uri.should eq "http://localhost:3000/auth/shopify/callback"
+    expect(Shopify.settings.api_key).to eq "my_api_key"
+    expect(Shopify.settings.secret).to eq "my_secret"
+    expect(Shopify.settings.scope).to eq "read_products,write_products"
+    expect(Shopify.settings.redirect_uri).to eq "http://localhost:3000/auth/shopify/callback"
   end
 end
