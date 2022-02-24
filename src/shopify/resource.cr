@@ -173,7 +173,7 @@ abstract class Shopify::Resource
     # ```crystal
     # {{@type.id}}.create(body, domain, headers: headers) #=> {{@type.id}}
     # ```
-    # A sample body from shopify:
+    # A sample body from [shopify docs](https://shopify.dev/api/admin-rest/2022-01/resources/customer#post-customers):
     # ```json
     # {"customer":{"first_name":"Steve","last_name":"Lastnameson","email":"steve.lastnameson@example.com","phone":"+15142546011","verified_email":true,"addresses":[{"address1":"123 Oak St","city":"Ottawa","province":"ON","phone":"555-1212","zip":"123 ABC","last_name":"Lastnameson","first_name":"Mother","country":"CA"}]}}
     # ```
