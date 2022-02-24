@@ -192,7 +192,7 @@ abstract class Shopify::Resource
     # POST
     # /admin/api/2022-01/{{@type.id.split("::").last.downcase.id}}s.json
     # ```
-    def self.create(body : String, domain : String, headers : HTTP::Headers = headers)
+    def self.create(body : String, domain : String, headers : HTTP::Headers = headers) : {{@type.id}}
       JSON::PullParser.new(
         ErroringResponse.new(
           HTTP::Client.post(uri(domain), headers, body)
