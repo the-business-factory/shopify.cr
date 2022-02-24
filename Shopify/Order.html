@@ -130,7 +130,9 @@
 </h1>
 
 
-  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Shopify/Order.html">Shopify::Order</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Shopify/Order.html">Shopify::Order</a></li><li class="superclass"><a href="../Shopify/Resource.html">Shopify::Resource</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
 
 
 
@@ -140,20 +142,18 @@
 
 
   <h2>
-    <a id="included-modules" class="anchor" href="#included-modules">
+    <a id="extended-modules" class="anchor" href="#extended-modules">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>
-    Included Modules
+    Extended Modules
   </h2>
   <ul class="other-types-list">
     
-      <li class="other-type">JSON::Serializable</li>
+      <li class="other-type">Shopify::Resource::ClassMethods</li>
     
   </ul>
-
-
 
 
 
@@ -172,7 +172,7 @@
   </h2>
   
     
-      <a href="https://github.com/the-business-factory/shopify.cr/blob/48a6e065d535f55f71f44f35c5e38cc1cb682f4e/src/shopify/resources/order.cr#L3" target="_blank">
+      <a href="https://github.com/the-business-factory/shopify.cr/blob/557d9c53f2aa7cf3f77ec4e671728ded27b60350/src/shopify/resources/order.cr#L4" target="_blank">
         shopify/resources/order.cr
       </a>
     
@@ -202,13 +202,106 @@
 
 
 
+  <h2>
+    <a id="class-method-summary" class="anchor" href="#class-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#all%28domain%3AString%2Cheaders%3AHTTP%3A%3AHeaders%3Dheaders%29%3AArray%28Shopify%3A%3AOrder%29-class-method" class="signature"><strong>.all</strong>(domain : String, headers : HTTP::Headers = headers) : Array(Shopify::Order)</a>
+        
+          <div class="summary"><p>Used to return an array of orders.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#all%28domain%3AString%2Cnext_page_uri%3AString%3F%3Dnil%2Cheaders%3AHTTP%3A%3AHeaders%3Dheaders%2C%26block%3Aself-%3E%29-class-method" class="signature"><strong>.all</strong>(domain : String, next_page_uri : String? = <span class="n">nil</span>, headers : HTTP::Headers = headers, &block : <span class="k">self</span> -> )</a>
+        
+          <div class="summary"><p>Used to iterate over all orders.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#count%28domain%3AString%2Cheaders%3AHTTP%3A%3AHeaders%3Dheaders%29%3AInt64-class-method" class="signature"><strong>.count</strong>(domain : String, headers : HTTP::Headers = headers) : Int64</a>
+        
+          <div class="summary"><p>Used to get a count of all orders.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#uri%28domain%3AString%2Cpath%3AString%3D%22%22%29%3AURI-class-method" class="signature"><strong>.uri</strong>(domain : String, path : String = <span class="s">&quot;&quot;</span>) : URI</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#with%28store%3AStore%29-class-method" class="signature"><strong>.with</strong>(store : Store)</a>
+        
+      </li>
+    
+  </ul>
 
+
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#store%3AStore-instance-method" class="signature"><strong>#store</strong> : Store</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#store%3D%28store%3AStore%29-instance-method" class="signature"><strong>#store=</strong>(store : Store)</a>
+        
+      </li>
+    
+  </ul>
 
 
 
 
 
 <div class="methods-inherited">
+  
+    
+
+
+    
+
+  <h3>Constructor methods inherited from class <code><a href="../Shopify/Resource.html">Shopify::Resource</a></code></h3>
+  
+  
+    <a href="../Shopify/Resource.html#new%28pull%3AJSON%3A%3APullParser%29-class-method" class="tooltip">
+      <span>new(pull : JSON::PullParser)</span>
+    new</a>
+    
+  
+
+
+    
+
+  <h3>Class methods inherited from class <code><a href="../Shopify/Resource.html">Shopify::Resource</a></code></h3>
+  
+  
+    <a href="../Shopify/Resource.html#headers-class-method" class="tooltip">
+      <span>headers</span>
+    headers</a>
+    
+  
+
+
   
     
 
@@ -263,7 +356,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/48a6e065d535f55f71f44f35c5e38cc1cb682f4e/src/shopify/resources/order.cr#L4" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/557d9c53f2aa7cf3f77ec4e671728ded27b60350/src/shopify/resources/order.cr#L4" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -271,7 +364,181 @@
 
 
 
+  <h2>
+    <a id="class-method-detail" class="anchor" href="#class-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="all(domain:String,headers:HTTP::Headers=headers):Array(Shopify::Order)-class-method">
+      <div class="signature">
+        
+        def self.<strong>all</strong>(domain : String, headers : HTTP::Headers = headers) : Array(<a href="../Shopify/Order.html">Shopify::Order</a>)
 
+        <a class="method-permalink" href="#all%28domain%3AString%2Cheaders%3AHTTP%3A%3AHeaders%3Dheaders%29%3AArray%28Shopify%3A%3AOrder%29-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Used to return an array of orders. Uses fibers to fetch pages concurrently.</p>
+<p><span class="flag purple">NOTE</span>  It is recommended to use <code>.all(domain, next_page_uri, headers, &amp;block)</code>
+directly instead of this method as it is more performant.</p>
+<p>Generally, this is used with <code><a href="../Shopify/Order.html#with%28store%3AStore%29-class-method">.with(store)</a></code>:</p>
+<pre><code class="language-crystal"><span class="t">Shopify</span><span class="t">::</span><span class="t">Order</span>.<span class="k">with</span>(store).all <span class="c">#=&gt; Array(Shopify::Order)</span></code></pre>
+<p>But it can be used stand-alone, too:</p>
+<pre><code class="language-crystal"><span class="t">Shopify</span><span class="t">::</span><span class="t">Order</span>.all(domain, headers: headers) <span class="c">#=&gt; Array(Shopify::Order)</span></code></pre>
+<p>This just runs the <code>&amp;block</code> version of <code>.all(domain, next_page_uri, headers, &amp;block)</code> to create an array</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/557d9c53f2aa7cf3f77ec4e671728ded27b60350/src/shopify/resources/order.cr#L5" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="all(domain:String,next_page_uri:String?=nil,headers:HTTP::Headers=headers,&amp;block:self-&gt;)-class-method">
+      <div class="signature">
+        
+        def self.<strong>all</strong>(domain : String, next_page_uri : String? = <span class="n">nil</span>, headers : HTTP::Headers = headers, &block : <span class="k">self</span> -> )
+
+        <a class="method-permalink" href="#all%28domain%3AString%2Cnext_page_uri%3AString%3F%3Dnil%2Cheaders%3AHTTP%3A%3AHeaders%3Dheaders%2C%26block%3Aself-%3E%29-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Used to iterate over all orders. Uses fibers to fetch pages concurrently.</p>
+<p>Generally, this is used with <code><a href="../Shopify/Order.html#with%28store%3AStore%29-class-method">.with(store)</a></code>:</p>
+<pre><code class="language-crystal"><span class="t">Shopify</span><span class="t">::</span><span class="t">Order</span>.<span class="k">with</span>(store).all <span class="k">do</span> <span class="o">|</span>customer<span class="o">|</span>
+  <span class="c"># do something with order</span>
+<span class="k">end</span></code></pre>
+<p>But it can be used stand-alone, too:</p>
+<pre><code class="language-crystal"><span class="t">Shopify</span><span class="t">::</span><span class="t">Order</span>.all(domain, headers: headers) <span class="k">do</span> <span class="o">|</span>order<span class="o">|</span>
+  <span class="c"># do something with order</span>
+<span class="k">end</span></code></pre>
+<p>Under the covers, this just runs:</p>
+<pre><code class="language-plaintext">GET
+/admin/api/2022-01/orders.json</code></pre>
+<p>and follows every next Response Headers &quot;Link&quot; until there are no more.</p>
+<p>Uses <code><a href="../Shopify/Resource/NextPreviousParser.html">NextPreviousParser</a></code> to parse the response headers.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/557d9c53f2aa7cf3f77ec4e671728ded27b60350/src/shopify/resources/order.cr#L5" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="count(domain:String,headers:HTTP::Headers=headers):Int64-class-method">
+      <div class="signature">
+        
+        def self.<strong>count</strong>(domain : String, headers : HTTP::Headers = headers) : Int64
+
+        <a class="method-permalink" href="#count%28domain%3AString%2Cheaders%3AHTTP%3A%3AHeaders%3Dheaders%29%3AInt64-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Used to get a count of all orders.</p>
+<p>Generally, this is used with <code><a href="../Shopify/Order.html#with%28store%3AStore%29-class-method">.with(store)</a></code>:</p>
+<pre><code class="language-crystal"><span class="t">Shopify</span><span class="t">::</span><span class="t">Order</span>.<span class="k">with</span>(store).count <span class="c">#=&gt; Int64</span></code></pre>
+<p>But it can be used stand-alone, too:</p>
+<pre><code class="language-crystal"><span class="t">Shopify</span><span class="t">::</span><span class="t">Order</span>.count(domain, headers: headers) <span class="c">#=&gt; Int64</span></code></pre>
+<p>Under the covers, this just runs:</p>
+<pre><code class="language-plaintext">GET
+/admin/api/2022-01/orders/count.json</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/557d9c53f2aa7cf3f77ec4e671728ded27b60350/src/shopify/resources/order.cr#L6" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="uri(domain:String,path:String=&quot;&quot;):URI-class-method">
+      <div class="signature">
+        
+        def self.<strong>uri</strong>(domain : String, path : String = <span class="s">&quot;&quot;</span>) : URI
+
+        <a class="method-permalink" href="#uri%28domain%3AString%2Cpath%3AString%3D%22%22%29%3AURI-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/557d9c53f2aa7cf3f77ec4e671728ded27b60350/src/shopify/resources/order.cr#L11" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="with(store:Store)-class-method">
+      <div class="signature">
+        
+        def self.<strong>with</strong>(store : <a href="../Shopify/Store.html">Store</a>)
+
+        <a class="method-permalink" href="#with%28store%3AStore%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/557d9c53f2aa7cf3f77ec4e671728ded27b60350/src/shopify/resources/order.cr#L4" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="store:Store-instance-method">
+      <div class="signature">
+        
+        def <strong>store</strong> : <a href="../Shopify/Store.html">Store</a>
+
+        <a class="method-permalink" href="#store%3AStore-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/557d9c53f2aa7cf3f77ec4e671728ded27b60350/src/shopify/resources/order.cr#L9" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="store=(store:Store)-instance-method">
+      <div class="signature">
+        
+        def <strong>store=</strong>(store : <a href="../Shopify/Store.html">Store</a>)
+
+        <a class="method-permalink" href="#store%3D%28store%3AStore%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/557d9c53f2aa7cf3f77ec4e671728ded27b60350/src/shopify/resources/order.cr#L9" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
 
 
 
