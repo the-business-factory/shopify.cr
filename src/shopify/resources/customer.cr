@@ -117,6 +117,29 @@ class Shopify::Customer < Shopify::Resource
 
   # Under the covers, this just runs:
   # ```plaintext
+  # PUT
+  # /admin/api/2022-01/customers/{id}.json
+  # ```
+  def update(body : String) : Shopify::Customer
+    JSON::PullParser.new(
+      pp! HTTP::Client.put(
+        self.class.uri(store.shop, "/#{id}"),
+        HTTP::Headers{
+          "X-Shopify-Access-Token" => store.access_token,
+          "Content-Type"           => "application/json",
+        },
+        body
+      ).body
+    ).try do |pull|
+      pull.read_begin_object
+      pull.read_object_key
+
+      Customer.from_json pull.read_raw
+    end
+  end
+
+  # Under the covers, this just runs:
+  # ```plaintext
   # DELETE
   # /admin/api/2022-01/customers/{id}.json
   # ```
