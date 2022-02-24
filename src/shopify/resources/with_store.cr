@@ -8,6 +8,8 @@ class Shopify::WithStore(T)
     }
   end
 
+  forward_missing_to T
+
   def all
     T.all(@store.shop, new_headers)
   end

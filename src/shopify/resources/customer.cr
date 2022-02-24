@@ -5,6 +5,7 @@ require "../../shopify"
 class Shopify::Customer < Shopify::Resource
   findable
   indexable
+
   property id : Int64
   property email : String
   property accepts_marketing : Bool
