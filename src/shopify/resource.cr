@@ -41,6 +41,17 @@ abstract class Shopify::Resource
   end
 
   macro findable
+    # Used to fetch one {{@type.id.split("::").last.downcase.id}}.
+    #
+    # Generally, this is used with `.with(store)`:
+    # ```crystal
+    # {{@type.id}}.with(store).find(id) #=> {{@type.id}}
+    # ```
+    # But it can be used stand-alone, too:
+    #
+    # ```crystal
+    # {{@type.id}}.find(id, domain, headers: headers) #=> {{@type.id}}
+    # ```
     def self.find(id : Int64, domain : String, headers : HTTP::Headers = headers)
       JSON::PullParser.new(
         HTTP::Client.get(uri(domain, "/#{id}"), headers).body
@@ -54,6 +65,17 @@ abstract class Shopify::Resource
   end
 
   macro indexable
+    # Used to return an array of {{@type.id.split("::").last.downcase.id}}s. Uses fibers to fetch pages concurrently.
+    #
+    # Generally, this is used with `.with(store)`:
+    # ```crystal
+    # {{@type.id}}.with(store).all #=> Array({{@type.id}})
+    # ```
+    # But it can be used stand-alone, too:
+    #
+    # ```crystal
+    # {{@type.id}}.all(domain, headers: headers) #=> Array({{@type.id}})
+    # ```
     def self.all(domain : String, headers : HTTP::Headers = headers)
       resources = [] of self
 
@@ -64,6 +86,21 @@ abstract class Shopify::Resource
       resources
     end
 
+    # Used to iterate over all {{@type.id.split("::").last.downcase.id}}s. Uses fibers to fetch pages concurrently.
+    #
+    # Generally, this is used with `.with(store)`:
+    # ```crystal
+    # {{@type.id}}.with(store).all do |customer|
+    #   # do something with {{@type.id.split("::").last.downcase.id}}
+    # end
+    # ```
+    # But it can be used stand-alone, too:
+    #
+    # ```crystal
+    # {{ @type }}.all(domain, headers: headers) do |{{@type.id.split("::").last.downcase.id}}|
+    #   # do something with {{@type.id.split("::").last.downcase.id}}
+    # end
+    # ```
     def self.all(
       domain : String,
       next_page_uri : String? = nil,
