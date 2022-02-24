@@ -114,4 +114,19 @@ class Shopify::Customer < Shopify::Resource
       orders
     end
   end
+
+  # Under the covers, this just runs:
+  # ```plaintext
+  # DELETE
+  # /admin/api/2022-01/customers/{id}.json
+  # ```
+  def delete
+    HTTP::Client.delete(
+      self.class.uri(store.shop, "/#{id}"),
+      HTTP::Headers{
+        "X-Shopify-Access-Token" => store.access_token,
+        "Content-Type"           => "application/json",
+      }
+    )
+  end
 end
