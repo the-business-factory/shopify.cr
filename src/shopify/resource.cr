@@ -254,6 +254,37 @@ abstract class Shopify::Resource
     end
   end
 
+  macro updatable
+    # {% if @type == Shopify::Customer %}
+    # Sample Body from [Shopify Docs](https://shopify.dev/api/admin-rest/2022-01/resources/customer#put-customers-customer-id):
+    # ```plaintext
+    # {"id":207119551,"email":"changed@example.com","note":"Customer is great"}}
+    # ```
+    # {% end %}
+    # Under the covers, this just runs:
+    # ```plaintext
+    # PUT
+    # /admin/api/2022-01/{{@type.id.split("::").last.downcase.id}}s/{id}.json
+    # ```
+    def update(body : String) : self
+      JSON::PullParser.new(
+        HTTP::Client.put(
+          self.class.uri(store.shop, "/#{id}"),
+          HTTP::Headers{
+            "X-Shopify-Access-Token" => store.access_token,
+            "Content-Type"           => "application/json",
+          },
+          body
+        ).body
+      ).try do |pull|
+        pull.read_begin_object
+        pull.read_object_key
+
+        self.class.from_json pull.read_raw
+      end
+    end
+  end
+
   macro deletable
     # Used to delete one {{@type.id.split("::").last.downcase.id}}.
     #
