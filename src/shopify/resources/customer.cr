@@ -86,4 +86,31 @@ class Shopify::Customer < Shopify::Resource
       CustomerInvite.from_json pull.read_raw
     end
   end
+
+  # Under the covers, this just runs:
+  # ```plaintext
+  # GET
+  # /admin/api/2022-01/customers/207119551/orders.json
+  # ```
+  def orders : Array(Shopify::Order)
+    JSON::PullParser.new(
+      pp! HTTP::Client.get(
+        self.class.uri(store.shop, "/#{id}/orders"),
+        HTTP::Headers{
+          "X-Shopify-Access-Token" => store.access_token,
+          "Content-Type"           => "application/json",
+        }
+      ).body
+    ).try do |pull|
+      pull.read_begin_object
+      pull.read_object_key
+
+      orders = [] of Shopify::Order
+      pull.read_array do
+        orders << Order.from_json pull.read_raw
+      end
+
+      orders
+    end
+  end
 end
