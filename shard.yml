@@ -19,3 +19,5 @@ development_dependencies:
   spectator:
     github: icy-arctic-fox/spectator
     version: ~> 0.10
+  vcr:
+    github: spoved/vcr.cr
