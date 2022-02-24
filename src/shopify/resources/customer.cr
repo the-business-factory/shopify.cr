@@ -95,7 +95,7 @@ class Shopify::Customer < Shopify::Resource
   # ```
   def orders : Array(Shopify::Order)
     JSON::PullParser.new(
-      pp! HTTP::Client.get(
+      HTTP::Client.get(
         self.class.uri(store.shop, "/#{id}/orders"),
         HTTP::Headers{
           "X-Shopify-Access-Token" => store.access_token,
