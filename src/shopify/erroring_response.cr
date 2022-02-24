@@ -1,5 +1,3 @@
-class Shopify::ValidationError < Exception; end
-
 class Shopify::AuthenticationError < Exception; end
 
 class Shopify::PermissionDenied < Exception; end
@@ -27,6 +25,8 @@ class Shopify::ErroringResponse
       raise Shopify::PermissionDenied.new(response.body)
     when 404
       raise Shopify::ResourceNotFound.new(response.body)
+    when 406
+      raise Shopify::ValidationError.new(response.body)
     when 422
       raise Shopify::ValidationError.new(response.body)
     when 429
