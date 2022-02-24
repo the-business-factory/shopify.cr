@@ -1,0 +1,35 @@
+HTTP/1.1 404 Not Found
+Date: Thu, 24 Feb 2022 21:16:41 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+X-Sorting-Hat-PodId: 253
+X-Sorting-Hat-ShopId: 62873829630
+Vary: Accept-Encoding
+Referrer-Policy: origin-when-cross-origin
+X-Frame-Options: DENY
+X-ShopId: 62873829630
+X-ShardId: 253
+X-Stats-UserId: 
+X-Stats-ApiClientId: 6511765
+X-Stats-ApiPermissionId: 357524963582
+HTTP_X_SHOPIFY_SHOP_API_CALL_LIMIT: 1/40
+X-Shopify-Shop-Api-Call-Limit: 1/40
+X-Shopify-API-Version: 2021-10
+Strict-Transport-Security: max-age=7889238
+X-Shopify-Stage: production
+Content-Security-Policy: default-src 'self' data: blob: 'unsafe-inline' 'unsafe-eval' https://* shopify-pos://*; block-all-mixed-content; child-src 'self' https://* shopify-pos://*; connect-src 'self' wss://* https://*; frame-ancestors 'none'; img-src 'self' data: blob: https:; script-src https://cdn.shopify.com https://cdn.shopifycdn.net https://checkout.shopifycs.com https://api.stripe.com https://mpsnare.iesnare.com https://appcenter.intuit.com https://www.paypal.com https://js.braintreegateway.com https://c.paypal.com https://maps.googleapis.com https://www.google-analytics.com https://v.shopify.com 'self' 'unsafe-inline' 'unsafe-eval'; upgrade-insecure-requests; report-uri /csp-report?source%5Baction%5D=show&source%5Bapp%5D=Shopify&source%5Bcontroller%5D=admin%2Fproducts&source%5Bsection%5D=admin_api&source%5Buuid%5D=90401819-d935-41e6-930d-b30c3d6d099f
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Permitted-Cross-Domain-Policies: none
+X-XSS-Protection: 1; mode=block; report=/xss-report?source%5Baction%5D=show&source%5Bapp%5D=Shopify&source%5Bcontroller%5D=admin%2Fproducts&source%5Bsection%5D=admin_api&source%5Buuid%5D=90401819-d935-41e6-930d-b30c3d6d099f
+X-Dc: gcp-us-central1,gcp-us-east1,gcp-us-east1
+X-Request-ID: 90401819-d935-41e6-930d-b30c3d6d099f
+CF-Cache-Status: DYNAMIC
+Expect-CT: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+Server: cloudflare
+CF-RAY: 6e2bb766bf2226bf-MSP
+alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
+Content-Length: 22
+
+{"errors":"Not Found"}

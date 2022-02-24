@@ -1,3 +1,5 @@
+class Shopify::ValidationError < Exception; end
+
 class Shopify::AuthenticationError < Exception; end
 
 class Shopify::PermissionDenied < Exception; end
@@ -17,6 +19,8 @@ class Shopify::ServiceUnavailable < Exception; end
 class Shopify::ErroringResponse
   def initialize(@response : HTTP::Client::Response)
     case response.status_code
+    when 400
+      raise Shopify::ValidationError.new(response.body)
     when 401
       raise Shopify::AuthenticationError.new(response.body)
     when 403

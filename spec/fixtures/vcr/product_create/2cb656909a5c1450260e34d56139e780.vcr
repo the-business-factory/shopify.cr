@@ -1,0 +1,35 @@
+HTTP/1.1 201 Created
+Date: Thu, 24 Feb 2022 21:16:34 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: close
+X-Sorting-Hat-PodId: 253
+X-Sorting-Hat-ShopId: 62873829630
+Referrer-Policy: origin-when-cross-origin
+X-Frame-Options: DENY
+X-ShopId: 62873829630
+X-ShardId: 253
+X-Stats-UserId:
+X-Stats-ApiClientId: 6511765
+X-Stats-ApiPermissionId: 357524963582
+HTTP_X_SHOPIFY_SHOP_API_CALL_LIMIT: 1/40
+X-Shopify-Shop-Api-Call-Limit: 1/40
+X-Shopify-API-Version: 2021-10
+Location: https://example.myshopify.com/admin/products/7580898361598
+Strict-Transport-Security: max-age=7889238
+X-Shopify-Stage: production
+Content-Security-Policy: default-src 'self' data: blob: 'unsafe-inline' 'unsafe-eval' https://* shopify-pos://*; block-all-mixed-content; child-src 'self' https://* shopify-pos://*; connect-src 'self' wss://* https://*; frame-ancestors 'none'; img-src 'self' data: blob: https:; script-src https://cdn.shopify.com https://cdn.shopifycdn.net https://checkout.shopifycs.com https://api.stripe.com https://mpsnare.iesnare.com https://appcenter.intuit.com https://www.paypal.com https://js.braintreegateway.com https://c.paypal.com https://maps.googleapis.com https://www.google-analytics.com https://v.shopify.com 'self' 'unsafe-inline' 'unsafe-eval'; upgrade-insecure-requests; report-uri /csp-report?source%5Baction%5D=create&source%5Bapp%5D=Shopify&source%5Bcontroller%5D=admin%2Fproducts&source%5Bsection%5D=admin_api&source%5Buuid%5D=81c202f3-47b8-4dec-8d37-18b3811742a1
+X-Content-Type-Options: nosniff
+X-Download-Options: noopen
+X-Permitted-Cross-Domain-Policies: none
+X-XSS-Protection: 1; mode=block; report=/xss-report?source%5Baction%5D=create&source%5Bapp%5D=Shopify&source%5Bcontroller%5D=admin%2Fproducts&source%5Bsection%5D=admin_api&source%5Buuid%5D=81c202f3-47b8-4dec-8d37-18b3811742a1
+X-Dc: gcp-us-central1,gcp-us-east1,gcp-us-east1
+X-Request-ID: 81c202f3-47b8-4dec-8d37-18b3811742a1
+CF-Cache-Status: DYNAMIC
+Expect-CT: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+Server: cloudflare
+CF-RAY: 6e2bb734781026b7-MSP
+alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
+Content-Length: 1308
+
+{"product":{"id":7580898361598,"title":"Burton Custom Freestyle 151","body_html":"\u003cstrong\u003eGood snowboard!\u003c\/strong\u003e","vendor":"Burton","product_type":"Snowboard","created_at":"2022-02-24T15:16:33-06:00","handle":"burton-custom-freestyle-162","updated_at":"2022-02-24T15:16:33-06:00","published_at":"2022-02-24T15:16:33-06:00","template_suffix":null,"status":"active","published_scope":"web","tags":"Barnes \u0026 Noble, Big Air, John's Fav","admin_graphql_api_id":"gid:\/\/shopify\/Product\/7580898361598","variants":[{"id":42487862493438,"product_id":7580898361598,"title":"Default Title","price":"0.00","sku":"","position":1,"inventory_policy":"deny","compare_at_price":null,"fulfillment_service":"manual","inventory_management":null,"option1":"Default Title","option2":null,"option3":null,"created_at":"2022-02-24T15:16:33-06:00","updated_at":"2022-02-24T15:16:33-06:00","taxable":true,"barcode":null,"grams":0,"image_id":null,"weight":0.0,"weight_unit":"lb","inventory_item_id":44582227869950,"inventory_quantity":0,"old_inventory_quantity":0,"requires_shipping":true,"admin_graphql_api_id":"gid:\/\/shopify\/ProductVariant\/42487862493438"}],"options":[{"id":9643594219774,"product_id":7580898361598,"name":"Title","position":1,"values":["Default Title"]}],"images":[],"image":null}}
