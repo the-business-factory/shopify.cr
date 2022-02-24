@@ -24,14 +24,12 @@ class Shopify::Store
   class Shopify::MissingAccessCode < Exception; end
 
   def retrieve_access_token : String
-    raise Shopify::MissingAccessCode.new if code.nil?
-
     response = HTTP::Client.post(
       "https://#{shop}/admin/oauth/access_token",
       form: {
         "client_id"     => Shopify.settings.api_key,
         "client_secret" => Shopify.settings.secret,
-        "code"          => code.not_nil!,
+        "code"          => code.presence || raise Shopify::MissingAccessCode.new
       }
     )
 
