@@ -9,6 +9,10 @@ Spectator.describe Shopify::Customer do
   end
 
   it "should serialize and deserialze to the same object" do
-    expect(JSON.parse(subject.to_json)).to eq JSON.parse(raw_json)
+    result = JSON.parse(subject.to_json)
+    actual = JSON.parse(raw_json)
+
+    expect(result.as_h.keys).to eq(actual.as_h.keys)
+    expect(result).to eq actual
   end
 end
