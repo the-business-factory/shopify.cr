@@ -5,9 +5,11 @@ require "http/client"
 abstract class Shopify::Resource
   include JSON::Serializable
 
-  HEADERS = HTTP::Headers{
-    "Content-Type" => "application/json",
-  }
+  def self.headers
+    HTTP::Headers{
+      "Content-Type" => "application/json",
+    }
+  end
 
   class NextPreviousParser
     def initialize(@links : String)
@@ -39,7 +41,7 @@ abstract class Shopify::Resource
   end
 
   macro findable
-    def self.find(id : Int64, domain : String, headers : HTTP::Headers = HEADERS)
+    def self.find(id : Int64, domain : String, headers : HTTP::Headers = headers)
       JSON::PullParser.new(
         HTTP::Client.get(uri(domain, "/#{id}"), headers).body
       ).try do |pull|
@@ -52,7 +54,7 @@ abstract class Shopify::Resource
   end
 
   macro indexable
-    def self.all(domain : String, headers : HTTP::Headers = HEADERS)
+    def self.all(domain : String, headers : HTTP::Headers = headers)
       resources = [] of self
 
       all(domain, headers: headers) do |resource|
@@ -65,7 +67,7 @@ abstract class Shopify::Resource
     def self.all(
       domain : String,
       next_page_uri : String? = nil,
-      headers : HTTP::Headers = HEADERS,
+      headers : HTTP::Headers = headers,
       &block : self ->
     )
       HTTP::Client.get(
