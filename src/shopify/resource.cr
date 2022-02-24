@@ -52,6 +52,12 @@ abstract class Shopify::Resource
     # ```crystal
     # {{@type.id}}.find(id, domain, headers: headers) #=> {{@type.id}}
     # ```
+    #
+    # Under the covers, this just runs:
+    # ```plaintext
+    # GET
+    # /admin/api/2022-01/{{@type.id.split("::").last.downcase.id}}s/{id}.json
+    # ```
     def self.find(id : Int64, domain : String, headers : HTTP::Headers = headers) : {{@type.id}}
       JSON::PullParser.new(
         HTTP::Client.get(uri(domain, "/#{id}"), headers).body
@@ -76,6 +82,8 @@ abstract class Shopify::Resource
     # ```crystal
     # {{@type.id}}.all(domain, headers: headers) #=> Array({{@type.id}})
     # ```
+    #
+    # This just runs the `&block` version of `.all(domain, next_page_uri, headers, &block)` to create an array
     def self.all(domain : String, headers : HTTP::Headers = headers) : Array({{@type.id}})
       resources = [] of self
 
@@ -101,6 +109,15 @@ abstract class Shopify::Resource
     #   # do something with {{@type.id.split("::").last.downcase.id}}
     # end
     # ```
+    #
+    # Under the covers, this just runs:
+    # ```plaintext
+    # GET
+    # /admin/api/2022-01/{{@type.id.split("::").last.downcase.id}}s.json
+    # ```
+    # and follows every next Response Headers "Link" until there are no more.
+    #
+    # Uses `NextPreviousParser` to parse the response headers.
     def self.all(
       domain : String,
       next_page_uri : String? = nil,
