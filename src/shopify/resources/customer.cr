@@ -3,6 +3,8 @@ require "../../shopify"
 # [https://shopify.dev/api/admin-rest/2022-01/resources/customer](https://shopify.dev/api/admin-rest/2022-01/resources/customer)
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Shopify::Customer < Shopify::Resource
+  findable
+  indexable
   property id : Int64
   property email : String
   property accepts_marketing : Bool

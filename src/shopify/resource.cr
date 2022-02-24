@@ -38,13 +38,7 @@ abstract class Shopify::Resource
     abstract def uri(domain : String, path : String = "") : URI
   end
 
-  macro inherited
-    extend ClassMethods
-
-    def self.with(store : Store)
-      WithStore(self).new(store)
-    end
-
+  macro findable
     def self.find(id : Int64, domain : String, headers : HTTP::Headers = HEADERS)
       JSON::PullParser.new(
         HTTP::Client.get(uri(domain, "/#{id}"), headers).body
@@ -55,7 +49,9 @@ abstract class Shopify::Resource
         from_json(pull.read_raw)
       end
     end
+  end
 
+  macro indexable
     def self.all(domain : String, headers : HTTP::Headers = HEADERS)
       resources = [] of self
 
@@ -95,6 +91,14 @@ abstract class Shopify::Resource
 
         channel.receive
       end
+    end
+  end
+
+  macro inherited
+    extend ClassMethods
+
+    def self.with(store : Store)
+      WithStore(self).new(store)
     end
   end
 end
