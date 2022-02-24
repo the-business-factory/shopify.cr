@@ -141,7 +141,7 @@ abstract class Shopify::Resource
       ).try do |response|
         channel = Channel(Nil).new
         spawn do
-          NextPreviousParser.new(response.headers["Link"]).next_link.try do |next_page|
+          NextPreviousParser.new(response.headers.fetch("Link", "")).next_link.try do |next_page|
             all(domain, next_page, headers, &block)
           end
           channel.send(nil)

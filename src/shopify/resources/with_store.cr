@@ -11,11 +11,13 @@ class Shopify::WithStore(TResource)
   forward_missing_to TResource
 
   def all
-    TResource.all(@store.shop, new_headers).tap &.store=(@store)
+    TResource.all(@store.shop, new_headers).map &.tap(&.store=(@store))
   end
 
   def all(page : String? = nil, &block : TResource ->)
-    TResource.all(@store.shop, page, new_headers, &block).tap &.store=(@store)
+    TResource.all(@store.shop, page, new_headers) do |resource|
+      block.call(resource.tap(&.store=(@store)))
+    end
   end
 
   def find(id)
