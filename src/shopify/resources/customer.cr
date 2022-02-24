@@ -7,6 +7,7 @@ class Shopify::Customer < Shopify::Resource
   indexable
   creatable
   countable
+  searchable
 
   @[JSON::Field(ignore: true)]
   property store : Store = Store.new("unknown.myshopify.com")

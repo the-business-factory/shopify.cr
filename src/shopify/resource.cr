@@ -109,7 +109,7 @@ abstract class Shopify::Resource
     #
     # Generally, this is used with `.with(store)`:
     # ```crystal
-    # {{@type.id}}.with(store).all do |customer|
+    # {{@type.id}}.with(store).all do |{{@type.id.split("::").last.downcase.id}}|
     #   # do something with {{@type.id.split("::").last.downcase.id}}
     # end
     # ```
@@ -225,27 +225,29 @@ abstract class Shopify::Resource
     end
   end
 
-  # Under the covers, this just runs:
-  # ```plaintext
-  # GET
-  # /admin/api/2022-01/customers/search.json?query=
-  # ```
-  def self.search(query : String, domain : String, headers : HTTP::Headers = headers)
-    JSON::PullParser.new(
-      HTTP::Client.get(
-        uri(domain, "/search").tap &.query= "?query=#{query}",
+  macro searchable
+    # Under the covers, this just runs:
+    # ```plaintext
+    # GET
+    # /admin/api/2022-01/{{@type.id.split("::").last.downcase.id}}s/search.json?query=
+    # ```
+    def self.search(query : String, domain : String, headers : HTTP::Headers = headers)
+      JSON::PullParser.new(
+        HTTP::Client.get(
+          uri(domain, "/search").tap &.query = "?query=#{query}",
           headers
-      ).body
-    ).try do |pull|
-      pull.read_begin_object
-      pull.read_object_key
+        ).body
+      ).try do |pull|
+        pull.read_begin_object
+        pull.read_object_key
 
-      resources = [] of self
-      pull.read_array do
-        resources << from_json(pull.read_raw)
+        resources = [] of self
+        pull.read_array do
+          resources << from_json(pull.read_raw)
+        end
+
+        resources
       end
-
-      resources
     end
   end
 end
