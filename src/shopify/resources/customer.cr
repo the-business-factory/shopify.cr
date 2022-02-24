@@ -41,11 +41,11 @@ class Shopify::Customer < Shopify::Resource
     URI.parse "https://#{domain}/admin/api/2022-01/customers#{path}.json"
   end
 
-    # Under the covers, this just runs:
-    # ```plaintext
-    # POST
-    # /admin/api/2022-01/customers/{id}/account_activation_url.json
-    # ```
+  # Under the covers, this just runs:
+  # ```plaintext
+  # POST
+  # /admin/api/2022-01/customers/{id}/account_activation_url.json
+  # ```
   def create_account_activation_url : URI
     JSON::PullParser.new(
       HTTP::Client.post(
