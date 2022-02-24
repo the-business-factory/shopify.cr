@@ -172,7 +172,7 @@
   </h2>
   
     
-      <a href="https://github.com/the-business-factory/shopify.cr/blob/8a59d084035025ff3d210545f79a78d2b6a80e95/src/shopify/resources/order.cr#L4" target="_blank">
+      <a href="https://github.com/the-business-factory/shopify.cr/blob/7a7dc9001371f53810c7bcbb8836935c1c22980a/src/shopify/resources/order.cr#L4" target="_blank">
         shopify/resources/order.cr
       </a>
     
@@ -246,6 +246,35 @@
   </ul>
 
 
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#delete-instance-method" class="signature"><strong>#delete</strong></a>
+        
+          <div class="summary"><p>Used to delete one order.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#id%3AInt64-instance-method" class="signature"><strong>#id</strong> : Int64</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#id%3D%28id%3AInt64%29-instance-method" class="signature"><strong>#id=</strong>(id : Int64)</a>
+        
+      </li>
+    
+  </ul>
 
 
 
@@ -348,7 +377,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/8a59d084035025ff3d210545f79a78d2b6a80e95/src/shopify/resources/order.cr#L4" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7a7dc9001371f53810c7bcbb8836935c1c22980a/src/shopify/resources/order.cr#L4" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -388,7 +417,7 @@ directly instead of this method as it is more performant.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/8a59d084035025ff3d210545f79a78d2b6a80e95/src/shopify/resources/order.cr#L5" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7a7dc9001371f53810c7bcbb8836935c1c22980a/src/shopify/resources/order.cr#L5" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -422,7 +451,7 @@ directly instead of this method as it is more performant.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/8a59d084035025ff3d210545f79a78d2b6a80e95/src/shopify/resources/order.cr#L5" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7a7dc9001371f53810c7bcbb8836935c1c22980a/src/shopify/resources/order.cr#L5" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -450,7 +479,7 @@ directly instead of this method as it is more performant.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/8a59d084035025ff3d210545f79a78d2b6a80e95/src/shopify/resources/order.cr#L6" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7a7dc9001371f53810c7bcbb8836935c1c22980a/src/shopify/resources/order.cr#L6" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -466,7 +495,7 @@ directly instead of this method as it is more performant.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/8a59d084035025ff3d210545f79a78d2b6a80e95/src/shopify/resources/order.cr#L8" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7a7dc9001371f53810c7bcbb8836935c1c22980a/src/shopify/resources/order.cr#L9" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -482,13 +511,79 @@ directly instead of this method as it is more performant.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/8a59d084035025ff3d210545f79a78d2b6a80e95/src/shopify/resources/order.cr#L4" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7a7dc9001371f53810c7bcbb8836935c1c22980a/src/shopify/resources/order.cr#L4" target="_blank">View source</a>]
         
       </div>
     </div>
   
 
 
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="delete-instance-method">
+      <div class="signature">
+        
+        def <strong>delete</strong>
+
+        <a class="method-permalink" href="#delete-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Used to delete one order.</p>
+<p>Under the covers, this just runs:</p>
+<pre><code class="language-plaintext">DELETE
+/admin/api/2022-01/orders/{id}.json</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7a7dc9001371f53810c7bcbb8836935c1c22980a/src/shopify/resources/order.cr#L7" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="id:Int64-instance-method">
+      <div class="signature">
+        
+        def <strong>id</strong> : Int64
+
+        <a class="method-permalink" href="#id%3AInt64-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7a7dc9001371f53810c7bcbb8836935c1c22980a/src/shopify/resources/order.cr#L13" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="id=(id:Int64)-instance-method">
+      <div class="signature">
+        
+        def <strong>id=</strong>(id : Int64)
+
+        <a class="method-permalink" href="#id%3D%28id%3AInt64%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/7a7dc9001371f53810c7bcbb8836935c1c22980a/src/shopify/resources/order.cr#L13" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
 
 
 
