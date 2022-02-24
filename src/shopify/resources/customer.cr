@@ -8,9 +8,7 @@ class Shopify::Customer < Shopify::Resource
   creatable
   countable
   searchable
-
-  @[JSON::Field(ignore: true)]
-  property store : Store = Store.new("unknown.myshopify.com")
+  deletable
 
   property id : Int64
   property email : String
@@ -141,20 +139,5 @@ class Shopify::Customer < Shopify::Resource
 
       Customer.from_json pull.read_raw
     end
-  end
-
-  # Under the covers, this just runs:
-  # ```plaintext
-  # DELETE
-  # /admin/api/2022-01/customers/{id}.json
-  # ```
-  def delete
-    HTTP::Client.delete(
-      self.class.uri(store.shop, "/#{id}"),
-      HTTP::Headers{
-        "X-Shopify-Access-Token" => store.access_token,
-        "Content-Type"           => "application/json",
-      }
-    )
   end
 end

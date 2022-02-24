@@ -5,6 +5,9 @@ require "http/client"
 abstract class Shopify::Resource
   include JSON::Serializable
 
+  @[JSON::Field(ignore: true)]
+  property store : Store = Store.new("unknown.myshopify.com")
+
   def self.headers
     HTTP::Headers{
       "Content-Type" => "application/json",
@@ -248,6 +251,25 @@ abstract class Shopify::Resource
 
         resources
       end
+    end
+  end
+
+  macro deletable
+    # Used to delete one {{@type.id.split("::").last.downcase.id}}.
+    #
+    # Under the covers, this just runs:
+    # ```plaintext
+    # DELETE
+    # /admin/api/2022-01/{{@type.id.split("::").last.downcase.id}}s/{id}.json
+    # ```
+    def delete
+      HTTP::Client.delete(
+        self.class.uri(store.shop, "/#{id}"),
+        HTTP::Headers{
+          "X-Shopify-Access-Token" => store.access_token,
+          "Content-Type"           => "application/json",
+        }
+      )
     end
   end
 end
