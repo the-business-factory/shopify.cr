@@ -188,7 +188,7 @@
   </h2>
   
     
-      <a href="https://github.com/the-business-factory/shopify.cr/blob/3ada4b9cc8a62dcbe5077e5de75ce971441ecf89/src/shopify/resource.cr#L5" target="_blank">
+      <a href="https://github.com/the-business-factory/shopify.cr/blob/9dbd68e55995cddeefdecc8e3cdc8d33750a374c/src/shopify/resource.cr#L5" target="_blank">
         shopify/resource.cr
       </a>
     
@@ -233,13 +233,6 @@
         
       </li>
     
-      <li class="entry-summary">
-        <a href="#search%28query%3AString%2Cdomain%3AString%2Cheaders%3AHTTP%3A%3AHeaders%3Dheaders%29-class-method" class="signature"><strong>.search</strong>(query : String, domain : String, headers : HTTP::Headers = headers)</a>
-        
-          <div class="summary"><p>Under the covers, this just runs: <code>plaintext GET /admin/api/2022-01/customers/search.json?query=</code></p></div>
-        
-      </li>
-    
   </ul>
 
 
@@ -273,6 +266,11 @@
     
       <li class="entry-summary">
         <a href="#indexable-macro" class="signature"><strong>indexable</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#searchable-macro" class="signature"><strong>searchable</strong></a>
         
       </li>
     
@@ -335,7 +333,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/3ada4b9cc8a62dcbe5077e5de75ce971441ecf89/src/shopify/resource.cr#L6" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/9dbd68e55995cddeefdecc8e3cdc8d33750a374c/src/shopify/resource.cr#L6" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -363,30 +361,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/3ada4b9cc8a62dcbe5077e5de75ce971441ecf89/src/shopify/resource.cr#L8" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="search(query:String,domain:String,headers:HTTP::Headers=headers)-class-method">
-      <div class="signature">
-        
-        def self.<strong>search</strong>(query : String, domain : String, headers : HTTP::Headers = headers)
-
-        <a class="method-permalink" href="#search%28query%3AString%2Cdomain%3AString%2Cheaders%3AHTTP%3A%3AHeaders%3Dheaders%29-class-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Under the covers, this just runs:</p>
-<pre><code class="language-plaintext">GET
-/admin/api/2022-01/customers/search.json?query=</code></pre>
-        </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/3ada4b9cc8a62dcbe5077e5de75ce971441ecf89/src/shopify/resource.cr#L233" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/9dbd68e55995cddeefdecc8e3cdc8d33750a374c/src/shopify/resource.cr#L8" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -416,7 +391,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/3ada4b9cc8a62dcbe5077e5de75ce971441ecf89/src/shopify/resource.cr#L199" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/9dbd68e55995cddeefdecc8e3cdc8d33750a374c/src/shopify/resource.cr#L199" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -432,7 +407,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/3ada4b9cc8a62dcbe5077e5de75ce971441ecf89/src/shopify/resource.cr#L164" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/9dbd68e55995cddeefdecc8e3cdc8d33750a374c/src/shopify/resource.cr#L164" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -448,7 +423,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/3ada4b9cc8a62dcbe5077e5de75ce971441ecf89/src/shopify/resource.cr#L51" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/9dbd68e55995cddeefdecc8e3cdc8d33750a374c/src/shopify/resource.cr#L51" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -464,7 +439,23 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/3ada4b9cc8a62dcbe5077e5de75ce971441ecf89/src/shopify/resource.cr#L81" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/9dbd68e55995cddeefdecc8e3cdc8d33750a374c/src/shopify/resource.cr#L81" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="searchable-macro">
+      <div class="signature">
+        
+        macro <strong>searchable</strong>
+
+        <a class="method-permalink" href="#searchable-macro">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/9dbd68e55995cddeefdecc8e3cdc8d33750a374c/src/shopify/resource.cr#L228" target="_blank">View source</a>]
         
       </div>
     </div>
