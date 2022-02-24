@@ -1,4 +1,4 @@
-class Shopify::WithStore(T)
+class Shopify::WithStore(TResource)
   def initialize(@store : Store); end
 
   def new_headers
@@ -8,21 +8,21 @@ class Shopify::WithStore(T)
     }
   end
 
-  forward_missing_to T
+  forward_missing_to TResource
 
   def all
-    T.all(@store.shop, new_headers).tap &.store=(@store)
+    TResource.all(@store.shop, new_headers).tap &.store=(@store)
   end
 
-  def all(page : String? = nil, &block : T ->)
-    T.all(@store.shop, page, new_headers, &block).tap &.store=(@store)
+  def all(page : String? = nil, &block : TResource ->)
+    TResource.all(@store.shop, page, new_headers, &block).tap &.store=(@store)
   end
 
   def find(id)
-    T.find(id, @store.shop, new_headers).tap &.store=(@store)
+    TResource.find(id, @store.shop, new_headers).tap &.store=(@store)
   end
 
   def create(body : String)
-    T.create(body, @store.shop, new_headers).tap &.store=(@store)
+    TResource.create(body, @store.shop, new_headers).tap &.store=(@store)
   end
 end
