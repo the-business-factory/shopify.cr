@@ -52,7 +52,7 @@ abstract class Shopify::Resource
     # ```crystal
     # {{@type.id}}.find(id, domain, headers: headers) #=> {{@type.id}}
     # ```
-    def self.find(id : Int64, domain : String, headers : HTTP::Headers = headers)
+    def self.find(id : Int64, domain : String, headers : HTTP::Headers = headers) : {{@type.id}}
       JSON::PullParser.new(
         HTTP::Client.get(uri(domain, "/#{id}"), headers).body
       ).try do |pull|
@@ -76,7 +76,7 @@ abstract class Shopify::Resource
     # ```crystal
     # {{@type.id}}.all(domain, headers: headers) #=> Array({{@type.id}})
     # ```
-    def self.all(domain : String, headers : HTTP::Headers = headers)
+    def self.all(domain : String, headers : HTTP::Headers = headers) : Array({{@type.id}})
       resources = [] of self
 
       all(domain, headers: headers) do |resource|
