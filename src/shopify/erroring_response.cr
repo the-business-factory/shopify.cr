@@ -16,7 +16,6 @@ class Shopify::ServiceUnavailable < Exception; end
 # response status_code is not successful.
 class Shopify::ErroringResponse
   def initialize(@response : HTTP::Client::Response)
-    pp! response
     case response.status_code
     when 401
       raise Shopify::AuthenticationError.new(response.body)
