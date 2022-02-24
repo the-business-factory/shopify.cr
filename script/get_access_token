@@ -7,7 +7,7 @@ require "../src/shopify"
 Shopify.configure do |config|
   config.api_key = ENV["SHOPIFY_API_KEY"]
   config.secret = ENV["SHOPIFY_API_SECRET"]
-  config.scope = "read_customers"
+  config.scope = "read_customers,write_customers"
   config.redirect_uri = "http://localhost:8080/oauth/callback"
 end
 
@@ -83,7 +83,7 @@ server = HTTP::Server.new do |context|
     access_token = Shopify::AccessToken.from_params(
       context.request.query_params
     ).access_token
-    store = Shopify::Shop.from_params(
+    store = Shopify::Store.from_params(
       context.request.query_params
     )
     context.response.content_type = "text/plain"

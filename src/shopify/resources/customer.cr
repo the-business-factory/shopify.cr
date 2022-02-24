@@ -5,6 +5,7 @@ require "../../shopify"
 class Shopify::Customer < Shopify::Resource
   findable
   indexable
+  creatable
 
   property id : Int64
   property email : String
@@ -29,7 +30,7 @@ class Shopify::Customer < Shopify::Resource
   property accepts_marketing_updated_at : Time
   property marketing_opt_in_level : String?
   property tax_exemptions : Array(JSON::Any)
-  property sms_marketing_consent : String?
+  property sms_marketing_consent : JSON::Any?
   property admin_graphql_api_id : String
   property default_address : Shopify::Address
 

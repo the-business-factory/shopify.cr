@@ -40,6 +40,14 @@ abstract class Shopify::Resource
     abstract def uri(domain : String, path : String = "") : URI
   end
 
+  macro inherited
+    extend ClassMethods
+
+    def self.with(store : Store)
+      WithStore(self).new(store)
+    end
+  end
+
   macro findable
     # Used to fetch one {{@type.id.split("::").last.downcase.id}}.
     #
@@ -72,6 +80,9 @@ abstract class Shopify::Resource
 
   macro indexable
     # Used to return an array of {{@type.id.split("::").last.downcase.id}}s. Uses fibers to fetch pages concurrently.
+    #
+    # NOTE: It is recommended to use `.all(domain, next_page_uri, headers, &block)`
+    # directly instead of this method as it is more performant.
     #
     # Generally, this is used with `.with(store)`:
     # ```crystal
@@ -150,11 +161,37 @@ abstract class Shopify::Resource
     end
   end
 
-  macro inherited
-    extend ClassMethods
+  macro creatable
+    # Used to create one {{@type.id.split("::").last.downcase.id}}.
+    #
+    # Generally, this is used with `.with(store)`:
+    # ```crystal
+    # {{@type.id}}.with(store).create(body) #=> {{@type.id}}
+    # ```
+    # But it can be used stand-alone, too:
+    #
+    # ```crystal
+    # {{@type.id}}.create(body, domain, headers: headers) #=> {{@type.id}}
+    # ```
+    # A sample body from shopify:
+    # ```json
+    # {"customer":{"first_name":"Steve","last_name":"Lastnameson","email":"steve.lastnameson@example.com","phone":"+15142546011","verified_email":true,"addresses":[{"address1":"123 Oak St","city":"Ottawa","province":"ON","phone":"555-1212","zip":"123 ABC","last_name":"Lastnameson","first_name":"Mother","country":"CA"}]}}
+    # ```
+    #
+    # Under the covers, this just runs:
+    # ```plaintext
+    # POST
+    # /admin/api/2022-01/{{@type.id.split("::").last.downcase.id}}s.json
+    # ```
+    def self.create(body : String, domain : String, headers : HTTP::Headers = headers)
+      JSON::PullParser.new(
+        HTTP::Client.post(uri(domain), headers, body).body
+      ).try do |pull|
+        pull.read_begin_object
+        pull.read_object_key
 
-    def self.with(store : Store)
-      WithStore(self).new(store)
+        from_json(pull.read_raw)
+      end
     end
   end
 end
