@@ -6,6 +6,7 @@ class Shopify::Customer < Shopify::Resource
   findable
   indexable
   creatable
+  countable
 
   @[JSON::Field(ignore: true)]
   property store : Store = Store.new("unknown.myshopify.com")
@@ -90,7 +91,7 @@ class Shopify::Customer < Shopify::Resource
   # Under the covers, this just runs:
   # ```plaintext
   # GET
-  # /admin/api/2022-01/customers/207119551/orders.json
+  # /admin/api/2022-01/customers/{id}/orders.json
   # ```
   def orders : Array(Shopify::Order)
     JSON::PullParser.new(

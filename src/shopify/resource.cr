@@ -196,19 +196,32 @@ abstract class Shopify::Resource
     end
   end
 
-  # Under the covers, this just runs:
-  # ```plaintext
-  # GET
-  # /admin/api/2022-01/customers/count.json
-  # ```
-  def self.count(domain : String, headers : HTTP::Headers = headers) : Int64
-    JSON::PullParser.new(
-      HTTP::Client.get(uri(domain, "/count"), headers).body
-    ).try do |pull|
-      pull.read_begin_object
-      pull.read_object_key
+  macro countable
+    # Used to get a count of all {{@type.id.split("::").last.downcase.id}}s.
+    #
+    # Generally, this is used with `.with(store)`:
+    # ```crystal
+    # {{@type.id}}.with(store).count #=> Int64
+    # ```
+    # But it can be used stand-alone, too:
+    #
+    # ```crystal
+    # {{@type.id}}.count(domain, headers: headers) #=> Int64
+    # ```
+    # Under the covers, this just runs:
+    # ```plaintext
+    # GET
+    # /admin/api/2022-01/{{@type.id.split("::").last.downcase.id}}s/count.json
+    # ```
+    def self.count(domain : String, headers : HTTP::Headers = headers) : Int64
+      JSON::PullParser.new(
+        HTTP::Client.get(uri(domain, "/count"), headers).body
+      ).try do |pull|
+        pull.read_begin_object
+        pull.read_object_key
 
-      pull.read_int
+        pull.read_int
+      end
     end
   end
 end
