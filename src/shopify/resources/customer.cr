@@ -63,4 +63,27 @@ class Shopify::Customer < Shopify::Resource
       URI.parse pull.read_string
     end
   end
+
+  # Under the covers, this just runs:
+  # ```plaintext
+  # POST
+  # /admin/api/2022-01/customers/{id}/send_invite.json
+  # ```
+  def send_invite : Shopify::CustomerInvite
+    JSON::PullParser.new(
+      HTTP::Client.post(
+        self.class.uri(store.shop, "/#{id}/send_invite"),
+        HTTP::Headers{
+          "X-Shopify-Access-Token" => store.access_token,
+          "Content-Type"           => "application/json",
+        },
+        "{\"customer_invite\":{}}"
+      ).body
+    ).try do |pull|
+      pull.read_begin_object
+      pull.read_object_key
+
+      CustomerInvite.from_json pull.read_raw
+    end
+  end
 end
