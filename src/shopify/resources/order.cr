@@ -3,6 +3,7 @@ require "../../shopify"
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Shopify::Order < Shopify::Resource
   indexable
+  findable
   countable
   deletable
 
