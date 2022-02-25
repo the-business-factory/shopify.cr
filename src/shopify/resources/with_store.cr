@@ -24,8 +24,8 @@ class Shopify::WithStore(TResource)
     TResource.find(id, @store.shop, new_headers).tap &.store=(@store)
   end
 
-  def create(body : String)
-    TResource.create(body, @store.shop, new_headers).tap &.store=(@store)
+  def create(body : String, *args)
+    TResource.create(body, @store.shop, new_headers, *args).tap &.store=(@store)
   end
 
   def search(query : String)
