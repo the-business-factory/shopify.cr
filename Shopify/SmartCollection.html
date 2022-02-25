@@ -13,7 +13,7 @@
 <script type="text/javascript" src="../js/doc.js"></script>
 
   <meta name="repository-name" content="shopify">
-  <title>Shopify::Collection - shopify main</title>
+  <title>Shopify::SmartCollection - shopify main</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../";
   </script>
@@ -66,7 +66,7 @@
       
     </li>
   
-  <li class=" current" data-id="shopify/Shopify/Collection" data-name="shopify::collection">
+  <li class=" " data-id="shopify/Shopify/Collection" data-name="shopify::collection">
       <a href="../Shopify/Collection.html">Collection</a>
       
     </li>
@@ -146,7 +146,7 @@
       
     </li>
   
-  <li class=" " data-id="shopify/Shopify/SmartCollection" data-name="shopify::smartcollection">
+  <li class=" current" data-id="shopify/Shopify/SmartCollection" data-name="shopify::smartcollection">
       <a href="../Shopify/SmartCollection.html">SmartCollection</a>
       
     </li>
@@ -185,12 +185,12 @@
 <div class="main-content">
 <h1 class="type-name">
 
-  <span class="kind">class</span> Shopify::Collection
+  <span class="kind">class</span> Shopify::SmartCollection
 
 </h1>
 
 
-  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Shopify/Collection.html">Shopify::Collection</a></li><li class="superclass"><a href="../Shopify/Resource.html">Shopify::Resource</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Shopify/SmartCollection.html">Shopify::SmartCollection</a></li><li class="superclass"><a href="../Shopify/Resource.html">Shopify::Resource</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
 
 
 
@@ -232,8 +232,8 @@
   </h2>
   
     
-      <a href="https://github.com/the-business-factory/shopify.cr/blob/871d59c15d3d0e78efe31e9cc0f957e13045b6b5/src/shopify/resources/collection.cr#L4" target="_blank">
-        shopify/resources/collection.cr
+      <a href="https://github.com/the-business-factory/shopify.cr/blob/871d59c15d3d0e78efe31e9cc0f957e13045b6b5/src/shopify/resources/smart_collection.cr#L4" target="_blank">
+        shopify/resources/smart_collection.cr
       </a>
     
     <br/>
@@ -273,9 +273,16 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#find%28id%3AInt64%2Cdomain%3AString%2Cheaders%3AHTTP%3A%3AHeaders%3Dheaders%29%3AShopify%3A%3ACollection-class-method" class="signature"><strong>.find</strong>(id : Int64, domain : String, headers : HTTP::Headers = headers) : Shopify::Collection</a>
+        <a href="#create%28body%3AString%2Cdomain%3AString%2Cheaders%3AHTTP%3A%3AHeaders%3Dheaders%29%3AShopify%3A%3ASmartCollection-class-method" class="signature"><strong>.create</strong>(body : String, domain : String, headers : HTTP::Headers = headers) : Shopify::SmartCollection</a>
         
-          <div class="summary"><p>Used to fetch one collection.</p></div>
+          <div class="summary"><p>Used to create one smartcollection.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#find%28id%3AInt64%2Cdomain%3AString%2Cheaders%3AHTTP%3A%3AHeaders%3Dheaders%29%3AShopify%3A%3ASmartCollection-class-method" class="signature"><strong>.find</strong>(id : Int64, domain : String, headers : HTTP::Headers = headers) : Shopify::SmartCollection</a>
+        
+          <div class="summary"><p>Used to fetch one smartcollection.</p></div>
         
       </li>
     
@@ -506,7 +513,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/871d59c15d3d0e78efe31e9cc0f957e13045b6b5/src/shopify/resources/collection.cr#L4" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/871d59c15d3d0e78efe31e9cc0f957e13045b6b5/src/shopify/resources/smart_collection.cr#L4" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -523,30 +530,58 @@
     Class Method Detail
   </h2>
   
-    <div class="entry-detail" id="find(id:Int64,domain:String,headers:HTTP::Headers=headers):Shopify::Collection-class-method">
+    <div class="entry-detail" id="create(body:String,domain:String,headers:HTTP::Headers=headers):Shopify::SmartCollection-class-method">
       <div class="signature">
         
-        def self.<strong>find</strong>(id : Int64, domain : String, headers : HTTP::Headers = headers) : <a href="../Shopify/Collection.html">Shopify::Collection</a>
+        def self.<strong>create</strong>(body : String, domain : String, headers : HTTP::Headers = headers) : <a href="../Shopify/SmartCollection.html">Shopify::SmartCollection</a>
 
-        <a class="method-permalink" href="#find%28id%3AInt64%2Cdomain%3AString%2Cheaders%3AHTTP%3A%3AHeaders%3Dheaders%29%3AShopify%3A%3ACollection-class-method">#</a>
+        <a class="method-permalink" href="#create%28body%3AString%2Cdomain%3AString%2Cheaders%3AHTTP%3A%3AHeaders%3Dheaders%29%3AShopify%3A%3ASmartCollection-class-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Used to fetch one collection.</p>
-<p>Generally, this is used with <code><a href="../Shopify/Collection.html#with%28store%3AStore%29-class-method">.with(store)</a></code>:</p>
-<pre><code class="language-crystal"><span class="t">Shopify</span><span class="t">::</span><span class="t">Collection</span>.<span class="k">with</span>(store).find(id) <span class="c">#=&gt; Shopify::Collection</span></code></pre>
+          <p>Used to create one smartcollection.</p>
+<p>Generally, this is used with <code><a href="../Shopify/SmartCollection.html#with%28store%3AStore%29-class-method">.with(store)</a></code>:</p>
+<pre><code class="language-crystal"><span class="t">Shopify</span><span class="t">::</span><span class="t">SmartCollection</span>.<span class="k">with</span>(store).create(body) <span class="c">#=&gt; Shopify::SmartCollection</span></code></pre>
 <p>But it can be used stand-alone, too:</p>
-<pre><code class="language-crystal"><span class="t">Shopify</span><span class="t">::</span><span class="t">Collection</span>.find(id, domain, headers: headers) <span class="c">#=&gt; Shopify::Collection</span></code></pre>
+<pre><code class="language-crystal"><span class="t">Shopify</span><span class="t">::</span><span class="t">SmartCollection</span>.create(body, domain, headers: headers) <span class="c">#=&gt; Shopify::SmartCollection</span></code></pre>
 <p>Under the covers, this just runs:</p>
-<pre><code class="language-plaintext">GET
-/admin/api/2022-01/collections/{id}.json</code></pre>
+<pre><code class="language-plaintext">POST
+/admin/api/2022-01/smartcollections.json</code></pre>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/871d59c15d3d0e78efe31e9cc0f957e13045b6b5/src/shopify/resources/collection.cr#L5" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/871d59c15d3d0e78efe31e9cc0f957e13045b6b5/src/shopify/resources/smart_collection.cr#L6" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="find(id:Int64,domain:String,headers:HTTP::Headers=headers):Shopify::SmartCollection-class-method">
+      <div class="signature">
+        
+        def self.<strong>find</strong>(id : Int64, domain : String, headers : HTTP::Headers = headers) : <a href="../Shopify/SmartCollection.html">Shopify::SmartCollection</a>
+
+        <a class="method-permalink" href="#find%28id%3AInt64%2Cdomain%3AString%2Cheaders%3AHTTP%3A%3AHeaders%3Dheaders%29%3AShopify%3A%3ASmartCollection-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Used to fetch one smartcollection.</p>
+<p>Generally, this is used with <code><a href="../Shopify/SmartCollection.html#with%28store%3AStore%29-class-method">.with(store)</a></code>:</p>
+<pre><code class="language-crystal"><span class="t">Shopify</span><span class="t">::</span><span class="t">SmartCollection</span>.<span class="k">with</span>(store).find(id) <span class="c">#=&gt; Shopify::SmartCollection</span></code></pre>
+<p>But it can be used stand-alone, too:</p>
+<pre><code class="language-crystal"><span class="t">Shopify</span><span class="t">::</span><span class="t">SmartCollection</span>.find(id, domain, headers: headers) <span class="c">#=&gt; Shopify::SmartCollection</span></code></pre>
+<p>Under the covers, this just runs:</p>
+<pre><code class="language-plaintext">GET
+/admin/api/2022-01/smartcollections/{id}.json</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/871d59c15d3d0e78efe31e9cc0f957e13045b6b5/src/shopify/resources/smart_collection.cr#L5" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -562,7 +597,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/871d59c15d3d0e78efe31e9cc0f957e13045b6b5/src/shopify/resources/collection.cr#L7" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/871d59c15d3d0e78efe31e9cc0f957e13045b6b5/src/shopify/resources/smart_collection.cr#L8" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -578,7 +613,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/871d59c15d3d0e78efe31e9cc0f957e13045b6b5/src/shopify/resources/collection.cr#L4" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/871d59c15d3d0e78efe31e9cc0f957e13045b6b5/src/shopify/resources/smart_collection.cr#L4" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -606,7 +641,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/871d59c15d3d0e78efe31e9cc0f957e13045b6b5/src/shopify/resources/collection.cr#L11" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/871d59c15d3d0e78efe31e9cc0f957e13045b6b5/src/shopify/resources/smart_collection.cr#L12" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -622,7 +657,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/871d59c15d3d0e78efe31e9cc0f957e13045b6b5/src/shopify/resources/collection.cr#L11" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/871d59c15d3d0e78efe31e9cc0f957e13045b6b5/src/shopify/resources/smart_collection.cr#L12" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -638,7 +673,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/871d59c15d3d0e78efe31e9cc0f957e13045b6b5/src/shopify/resources/collection.cr#L11" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/871d59c15d3d0e78efe31e9cc0f957e13045b6b5/src/shopify/resources/smart_collection.cr#L12" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -654,7 +689,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/871d59c15d3d0e78efe31e9cc0f957e13045b6b5/src/shopify/resources/collection.cr#L11" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/871d59c15d3d0e78efe31e9cc0f957e13045b6b5/src/shopify/resources/smart_collection.cr#L12" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -670,7 +705,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/871d59c15d3d0e78efe31e9cc0f957e13045b6b5/src/shopify/resources/collection.cr#L11" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/871d59c15d3d0e78efe31e9cc0f957e13045b6b5/src/shopify/resources/smart_collection.cr#L12" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -686,7 +721,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/871d59c15d3d0e78efe31e9cc0f957e13045b6b5/src/shopify/resources/collection.cr#L11" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/871d59c15d3d0e78efe31e9cc0f957e13045b6b5/src/shopify/resources/smart_collection.cr#L12" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -702,7 +737,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/871d59c15d3d0e78efe31e9cc0f957e13045b6b5/src/shopify/resources/collection.cr#L11" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/871d59c15d3d0e78efe31e9cc0f957e13045b6b5/src/shopify/resources/smart_collection.cr#L12" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -718,7 +753,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/871d59c15d3d0e78efe31e9cc0f957e13045b6b5/src/shopify/resources/collection.cr#L11" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/871d59c15d3d0e78efe31e9cc0f957e13045b6b5/src/shopify/resources/smart_collection.cr#L12" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -734,7 +769,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/871d59c15d3d0e78efe31e9cc0f957e13045b6b5/src/shopify/resources/collection.cr#L11" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/871d59c15d3d0e78efe31e9cc0f957e13045b6b5/src/shopify/resources/smart_collection.cr#L12" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -750,7 +785,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/871d59c15d3d0e78efe31e9cc0f957e13045b6b5/src/shopify/resources/collection.cr#L11" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/871d59c15d3d0e78efe31e9cc0f957e13045b6b5/src/shopify/resources/smart_collection.cr#L12" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -766,7 +801,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/871d59c15d3d0e78efe31e9cc0f957e13045b6b5/src/shopify/resources/collection.cr#L11" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/871d59c15d3d0e78efe31e9cc0f957e13045b6b5/src/shopify/resources/smart_collection.cr#L12" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -782,7 +817,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/871d59c15d3d0e78efe31e9cc0f957e13045b6b5/src/shopify/resources/collection.cr#L11" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/871d59c15d3d0e78efe31e9cc0f957e13045b6b5/src/shopify/resources/smart_collection.cr#L12" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -798,7 +833,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/871d59c15d3d0e78efe31e9cc0f957e13045b6b5/src/shopify/resources/collection.cr#L11" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/871d59c15d3d0e78efe31e9cc0f957e13045b6b5/src/shopify/resources/smart_collection.cr#L12" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -814,7 +849,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/871d59c15d3d0e78efe31e9cc0f957e13045b6b5/src/shopify/resources/collection.cr#L11" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/871d59c15d3d0e78efe31e9cc0f957e13045b6b5/src/shopify/resources/smart_collection.cr#L12" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -830,7 +865,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/871d59c15d3d0e78efe31e9cc0f957e13045b6b5/src/shopify/resources/collection.cr#L11" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/871d59c15d3d0e78efe31e9cc0f957e13045b6b5/src/shopify/resources/smart_collection.cr#L12" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -846,7 +881,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/871d59c15d3d0e78efe31e9cc0f957e13045b6b5/src/shopify/resources/collection.cr#L11" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/871d59c15d3d0e78efe31e9cc0f957e13045b6b5/src/shopify/resources/smart_collection.cr#L12" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -862,7 +897,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/871d59c15d3d0e78efe31e9cc0f957e13045b6b5/src/shopify/resources/collection.cr#L11" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/871d59c15d3d0e78efe31e9cc0f957e13045b6b5/src/shopify/resources/smart_collection.cr#L12" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -878,7 +913,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/871d59c15d3d0e78efe31e9cc0f957e13045b6b5/src/shopify/resources/collection.cr#L11" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/871d59c15d3d0e78efe31e9cc0f957e13045b6b5/src/shopify/resources/smart_collection.cr#L12" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -894,7 +929,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/871d59c15d3d0e78efe31e9cc0f957e13045b6b5/src/shopify/resources/collection.cr#L11" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/871d59c15d3d0e78efe31e9cc0f957e13045b6b5/src/shopify/resources/smart_collection.cr#L12" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -910,7 +945,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/871d59c15d3d0e78efe31e9cc0f957e13045b6b5/src/shopify/resources/collection.cr#L11" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/871d59c15d3d0e78efe31e9cc0f957e13045b6b5/src/shopify/resources/smart_collection.cr#L12" target="_blank">View source</a>]
         
       </div>
     </div>
