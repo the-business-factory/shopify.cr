@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 1.2.2">
+<meta name="crystal_docs.project_version" content="main">
+<meta name="crystal_docs.project_name" content="shopify">
+
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/doc.js"></script>
+
+  <meta name="repository-name" content="shopify">
+  <title>Shopify::Collection - shopify main</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../index.html">
+          shopify
+        </a>
+      </h1>
+
+      <span class="project-version">
+        main
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="shopify/Shopify" data-name="shopify">
+      <a href="../Shopify.html">Shopify</a>
+      
+        <ul>
+  
+  <li class=" " data-id="shopify/Shopify/Address" data-name="shopify::address">
+      <a href="../Shopify/Address.html">Address</a>
+      
+    </li>
+  
+  <li class=" " data-id="shopify/Shopify/AuthenticationError" data-name="shopify::authenticationerror">
+      <a href="../Shopify/AuthenticationError.html">AuthenticationError</a>
+      
+    </li>
+  
+  <li class=" current" data-id="shopify/Shopify/Collection" data-name="shopify::collection">
+      <a href="../Shopify/Collection.html">Collection</a>
+      
+    </li>
+  
+  <li class=" " data-id="shopify/Shopify/Customer" data-name="shopify::customer">
+      <a href="../Shopify/Customer.html">Customer</a>
+      
+    </li>
+  
+  <li class=" " data-id="shopify/Shopify/CustomerInvite" data-name="shopify::customerinvite">
+      <a href="../Shopify/CustomerInvite.html">CustomerInvite</a>
+      
+    </li>
+  
+  <li class=" " data-id="shopify/Shopify/ErroringResponse" data-name="shopify::erroringresponse">
+      <a href="../Shopify/ErroringResponse.html">ErroringResponse</a>
+      
+    </li>
+  
+  <li class=" " data-id="shopify/Shopify/HabitatSettings" data-name="shopify::habitatsettings">
+      <a href="../Shopify/HabitatSettings.html">HabitatSettings</a>
+      
+    </li>
+  
+  <li class=" " data-id="shopify/Shopify/InternalServerError" data-name="shopify::internalservererror">
+      <a href="../Shopify/InternalServerError.html">InternalServerError</a>
+      
+    </li>
+  
+  <li class=" " data-id="shopify/Shopify/MissingAccessCode" data-name="shopify::missingaccesscode">
+      <a href="../Shopify/MissingAccessCode.html">MissingAccessCode</a>
+      
+    </li>
+  
+  <li class=" " data-id="shopify/Shopify/Order" data-name="shopify::order">
+      <a href="../Shopify/Order.html">Order</a>
+      
+    </li>
+  
+  <li class=" " data-id="shopify/Shopify/PermissionDenied" data-name="shopify::permissiondenied">
+      <a href="../Shopify/PermissionDenied.html">PermissionDenied</a>
+      
+    </li>
+  
+  <li class=" " data-id="shopify/Shopify/Product" data-name="shopify::product">
+      <a href="../Shopify/Product.html">Product</a>
+      
+    </li>
+  
+  <li class=" " data-id="shopify/Shopify/ProductVariant" data-name="shopify::productvariant">
+      <a href="../Shopify/ProductVariant.html">ProductVariant</a>
+      
+    </li>
+  
+  <li class="parent " data-id="shopify/Shopify/Resource" data-name="shopify::resource">
+      <a href="../Shopify/Resource.html">Resource</a>
+      
+        <ul>
+  
+  <li class=" " data-id="shopify/Shopify/Resource/NextPreviousParser" data-name="shopify::resource::nextpreviousparser">
+      <a href="../Shopify/Resource/NextPreviousParser.html">NextPreviousParser</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="shopify/Shopify/ResourceNotFound" data-name="shopify::resourcenotfound">
+      <a href="../Shopify/ResourceNotFound.html">ResourceNotFound</a>
+      
+    </li>
+  
+  <li class=" " data-id="shopify/Shopify/ServiceUnavailable" data-name="shopify::serviceunavailable">
+      <a href="../Shopify/ServiceUnavailable.html">ServiceUnavailable</a>
+      
+    </li>
+  
+  <li class=" " data-id="shopify/Shopify/Store" data-name="shopify::store">
+      <a href="../Shopify/Store.html">Store</a>
+      
+    </li>
+  
+  <li class=" " data-id="shopify/Shopify/TooManyRequests" data-name="shopify::toomanyrequests">
+      <a href="../Shopify/TooManyRequests.html">TooManyRequests</a>
+      
+    </li>
+  
+  <li class=" " data-id="shopify/Shopify/ValidationError" data-name="shopify::validationerror">
+      <a href="../Shopify/ValidationError.html">ValidationError</a>
+      
+    </li>
+  
+  <li class=" " data-id="shopify/Shopify/WithStore" data-name="shopify::withstore(tresource)">
+      <a href="../Shopify/WithStore.html">WithStore</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> Shopify::Collection
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Shopify/Collection.html">Shopify::Collection</a></li><li class="superclass"><a href="../Shopify/Resource.html">Shopify::Resource</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="extended-modules" class="anchor" href="#extended-modules">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Extended Modules
+  </h2>
+  <ul class="other-types-list">
+    
+      <li class="other-type">Shopify::Resource::ClassMethods</li>
+    
+  </ul>
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      <a href="https://github.com/the-business-factory/shopify.cr/blob/58abce9241e989b8b290db08f688fb77bea38b56/src/shopify/resources/collection.cr#L4" target="_blank">
+        shopify/resources/collection.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+
+
+  <h2>
+    <a id="constructors" class="anchor" href="#constructors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructors
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new%28pull%3AJSON%3A%3APullParser%29-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+  <h2>
+    <a id="class-method-summary" class="anchor" href="#class-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#find%28id%3AInt64%2Cdomain%3AString%2Cheaders%3AHTTP%3A%3AHeaders%3Dheaders%29%3AShopify%3A%3ACollection-class-method" class="signature"><strong>.find</strong>(id : Int64, domain : String, headers : HTTP::Headers = headers) : Shopify::Collection</a>
+        
+          <div class="summary"><p>Used to fetch one collection.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#uri%28domain%3AString%2Cpath%3AString%3D%22%22%29%3AURI-class-method" class="signature"><strong>.uri</strong>(domain : String, path : String = <span class="s">&quot;&quot;</span>) : URI</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#with%28store%3AStore%29-class-method" class="signature"><strong>.with</strong>(store : Store)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#body_html%3AString%3F-instance-method" class="signature"><strong>#body_html</strong> : String?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#body_html%3D%28body_html%3AString%3F%29-instance-method" class="signature"><strong>#body_html=</strong>(body_html : String?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#handle%3AString-instance-method" class="signature"><strong>#handle</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#handle%3D%28handle%3AString%29-instance-method" class="signature"><strong>#handle=</strong>(handle : String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#id%3AInt64-instance-method" class="signature"><strong>#id</strong> : Int64</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#id%3D%28id%3AInt64%29-instance-method" class="signature"><strong>#id=</strong>(id : Int64)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#image%3AJSON%3A%3AAny%3F-instance-method" class="signature"><strong>#image</strong> : JSON::Any?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#image%3D%28image%3AJSON%3A%3AAny%3F%29-instance-method" class="signature"><strong>#image=</strong>(image : JSON::Any?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#published_at%3ATime%3F-instance-method" class="signature"><strong>#published_at</strong> : Time?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#published_at%3D%28published_at%3ATime%3F%29-instance-method" class="signature"><strong>#published_at=</strong>(published_at : Time?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#published_scope%3AString-instance-method" class="signature"><strong>#published_scope</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#published_scope%3D%28published_scope%3AString%29-instance-method" class="signature"><strong>#published_scope=</strong>(published_scope : String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#sort_order%3AString-instance-method" class="signature"><strong>#sort_order</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#sort_order%3D%28sort_order%3AString%29-instance-method" class="signature"><strong>#sort_order=</strong>(sort_order : String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#template_suffix%3AString%3F-instance-method" class="signature"><strong>#template_suffix</strong> : String?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#template_suffix%3D%28template_suffix%3AString%3F%29-instance-method" class="signature"><strong>#template_suffix=</strong>(template_suffix : String?)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#title%3AString-instance-method" class="signature"><strong>#title</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#title%3D%28title%3AString%29-instance-method" class="signature"><strong>#title=</strong>(title : String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#updated_at%3ATime-instance-method" class="signature"><strong>#updated_at</strong> : Time</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#updated_at%3D%28updated_at%3ATime%29-instance-method" class="signature"><strong>#updated_at=</strong>(updated_at : Time)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+  <h3>Instance methods inherited from class <code><a href="../Shopify/Resource.html">Shopify::Resource</a></code></h3>
+  
+  
+    <a href="../Shopify/Resource.html#store%3AStore-instance-method" class="tooltip">
+      <span>store : Store</span>
+    store</a>, 
+    
+  
+    <a href="../Shopify/Resource.html#store%3D%28store%3AStore%29-instance-method" class="tooltip">
+      <span>store=(store : Store)</span>
+    store=</a>
+    
+  
+
+
+    
+
+  <h3>Constructor methods inherited from class <code><a href="../Shopify/Resource.html">Shopify::Resource</a></code></h3>
+  
+  
+    <a href="../Shopify/Resource.html#new%28pull%3AJSON%3A%3APullParser%29-class-method" class="tooltip">
+      <span>new(pull : JSON::PullParser)</span>
+    new</a>
+    
+  
+
+
+    
+
+  <h3>Class methods inherited from class <code><a href="../Shopify/Resource.html">Shopify::Resource</a></code></h3>
+  
+  
+    <a href="../Shopify/Resource.html#headers-class-method" class="tooltip">
+      <span>headers</span>
+    headers</a>
+    
+  
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>
+    <a id="constructor-detail" class="anchor" href="#constructor-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructor Detail
+  </h2>
+  
+    <div class="entry-detail" id="new(pull:JSON::PullParser)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(pull : JSON::PullParser)
+
+        <a class="method-permalink" href="#new%28pull%3AJSON%3A%3APullParser%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/58abce9241e989b8b290db08f688fb77bea38b56/src/shopify/resources/collection.cr#L4" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+  <h2>
+    <a id="class-method-detail" class="anchor" href="#class-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="find(id:Int64,domain:String,headers:HTTP::Headers=headers):Shopify::Collection-class-method">
+      <div class="signature">
+        
+        def self.<strong>find</strong>(id : Int64, domain : String, headers : HTTP::Headers = headers) : <a href="../Shopify/Collection.html">Shopify::Collection</a>
+
+        <a class="method-permalink" href="#find%28id%3AInt64%2Cdomain%3AString%2Cheaders%3AHTTP%3A%3AHeaders%3Dheaders%29%3AShopify%3A%3ACollection-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Used to fetch one collection.</p>
+<p>Generally, this is used with <code><a href="../Shopify/Collection.html#with%28store%3AStore%29-class-method">.with(store)</a></code>:</p>
+<pre><code class="language-crystal"><span class="t">Shopify</span><span class="t">::</span><span class="t">Collection</span>.<span class="k">with</span>(store).find(id) <span class="c">#=&gt; Shopify::Collection</span></code></pre>
+<p>But it can be used stand-alone, too:</p>
+<pre><code class="language-crystal"><span class="t">Shopify</span><span class="t">::</span><span class="t">Collection</span>.find(id, domain, headers: headers) <span class="c">#=&gt; Shopify::Collection</span></code></pre>
+<p>Under the covers, this just runs:</p>
+<pre><code class="language-plaintext">GET
+/admin/api/2022-01/collections/{id}.json</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/58abce9241e989b8b290db08f688fb77bea38b56/src/shopify/resources/collection.cr#L5" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="uri(domain:String,path:String=&quot;&quot;):URI-class-method">
+      <div class="signature">
+        
+        def self.<strong>uri</strong>(domain : String, path : String = <span class="s">&quot;&quot;</span>) : URI
+
+        <a class="method-permalink" href="#uri%28domain%3AString%2Cpath%3AString%3D%22%22%29%3AURI-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/58abce9241e989b8b290db08f688fb77bea38b56/src/shopify/resources/collection.cr#L7" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="with(store:Store)-class-method">
+      <div class="signature">
+        
+        def self.<strong>with</strong>(store : <a href="../Shopify/Store.html">Store</a>)
+
+        <a class="method-permalink" href="#with%28store%3AStore%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/58abce9241e989b8b290db08f688fb77bea38b56/src/shopify/resources/collection.cr#L4" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="body_html:String?-instance-method">
+      <div class="signature">
+        
+        def <strong>body_html</strong> : String?
+
+        <a class="method-permalink" href="#body_html%3AString%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/58abce9241e989b8b290db08f688fb77bea38b56/src/shopify/resources/collection.cr#L11" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="body_html=(body_html:String?)-instance-method">
+      <div class="signature">
+        
+        def <strong>body_html=</strong>(body_html : String?)
+
+        <a class="method-permalink" href="#body_html%3D%28body_html%3AString%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/58abce9241e989b8b290db08f688fb77bea38b56/src/shopify/resources/collection.cr#L11" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="handle:String-instance-method">
+      <div class="signature">
+        
+        def <strong>handle</strong> : String
+
+        <a class="method-permalink" href="#handle%3AString-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/58abce9241e989b8b290db08f688fb77bea38b56/src/shopify/resources/collection.cr#L11" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="handle=(handle:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>handle=</strong>(handle : String)
+
+        <a class="method-permalink" href="#handle%3D%28handle%3AString%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/58abce9241e989b8b290db08f688fb77bea38b56/src/shopify/resources/collection.cr#L11" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="id:Int64-instance-method">
+      <div class="signature">
+        
+        def <strong>id</strong> : Int64
+
+        <a class="method-permalink" href="#id%3AInt64-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/58abce9241e989b8b290db08f688fb77bea38b56/src/shopify/resources/collection.cr#L11" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="id=(id:Int64)-instance-method">
+      <div class="signature">
+        
+        def <strong>id=</strong>(id : Int64)
+
+        <a class="method-permalink" href="#id%3D%28id%3AInt64%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/58abce9241e989b8b290db08f688fb77bea38b56/src/shopify/resources/collection.cr#L11" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="image:JSON::Any?-instance-method">
+      <div class="signature">
+        
+        def <strong>image</strong> : JSON::Any?
+
+        <a class="method-permalink" href="#image%3AJSON%3A%3AAny%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/58abce9241e989b8b290db08f688fb77bea38b56/src/shopify/resources/collection.cr#L11" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="image=(image:JSON::Any?)-instance-method">
+      <div class="signature">
+        
+        def <strong>image=</strong>(image : JSON::Any?)
+
+        <a class="method-permalink" href="#image%3D%28image%3AJSON%3A%3AAny%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/58abce9241e989b8b290db08f688fb77bea38b56/src/shopify/resources/collection.cr#L11" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="published_at:Time?-instance-method">
+      <div class="signature">
+        
+        def <strong>published_at</strong> : Time?
+
+        <a class="method-permalink" href="#published_at%3ATime%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/58abce9241e989b8b290db08f688fb77bea38b56/src/shopify/resources/collection.cr#L11" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="published_at=(published_at:Time?)-instance-method">
+      <div class="signature">
+        
+        def <strong>published_at=</strong>(published_at : Time?)
+
+        <a class="method-permalink" href="#published_at%3D%28published_at%3ATime%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/58abce9241e989b8b290db08f688fb77bea38b56/src/shopify/resources/collection.cr#L11" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="published_scope:String-instance-method">
+      <div class="signature">
+        
+        def <strong>published_scope</strong> : String
+
+        <a class="method-permalink" href="#published_scope%3AString-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/58abce9241e989b8b290db08f688fb77bea38b56/src/shopify/resources/collection.cr#L11" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="published_scope=(published_scope:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>published_scope=</strong>(published_scope : String)
+
+        <a class="method-permalink" href="#published_scope%3D%28published_scope%3AString%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/58abce9241e989b8b290db08f688fb77bea38b56/src/shopify/resources/collection.cr#L11" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="sort_order:String-instance-method">
+      <div class="signature">
+        
+        def <strong>sort_order</strong> : String
+
+        <a class="method-permalink" href="#sort_order%3AString-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/58abce9241e989b8b290db08f688fb77bea38b56/src/shopify/resources/collection.cr#L11" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="sort_order=(sort_order:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>sort_order=</strong>(sort_order : String)
+
+        <a class="method-permalink" href="#sort_order%3D%28sort_order%3AString%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/58abce9241e989b8b290db08f688fb77bea38b56/src/shopify/resources/collection.cr#L11" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="template_suffix:String?-instance-method">
+      <div class="signature">
+        
+        def <strong>template_suffix</strong> : String?
+
+        <a class="method-permalink" href="#template_suffix%3AString%3F-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/58abce9241e989b8b290db08f688fb77bea38b56/src/shopify/resources/collection.cr#L11" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="template_suffix=(template_suffix:String?)-instance-method">
+      <div class="signature">
+        
+        def <strong>template_suffix=</strong>(template_suffix : String?)
+
+        <a class="method-permalink" href="#template_suffix%3D%28template_suffix%3AString%3F%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/58abce9241e989b8b290db08f688fb77bea38b56/src/shopify/resources/collection.cr#L11" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="title:String-instance-method">
+      <div class="signature">
+        
+        def <strong>title</strong> : String
+
+        <a class="method-permalink" href="#title%3AString-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/58abce9241e989b8b290db08f688fb77bea38b56/src/shopify/resources/collection.cr#L11" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="title=(title:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>title=</strong>(title : String)
+
+        <a class="method-permalink" href="#title%3D%28title%3AString%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/58abce9241e989b8b290db08f688fb77bea38b56/src/shopify/resources/collection.cr#L11" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="updated_at:Time-instance-method">
+      <div class="signature">
+        
+        def <strong>updated_at</strong> : Time
+
+        <a class="method-permalink" href="#updated_at%3ATime-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/58abce9241e989b8b290db08f688fb77bea38b56/src/shopify/resources/collection.cr#L11" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="updated_at=(updated_at:Time)-instance-method">
+      <div class="signature">
+        
+        def <strong>updated_at=</strong>(updated_at : Time)
+
+        <a class="method-permalink" href="#updated_at%3D%28updated_at%3ATime%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/58abce9241e989b8b290db08f688fb77bea38b56/src/shopify/resources/collection.cr#L11" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>
