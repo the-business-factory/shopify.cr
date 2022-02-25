@@ -1,0 +1,21 @@
+{
+  "body_html": "<p>The best selling ipod ever</p>",
+  "handle": "smart-ipods",
+  "id": 482865238,
+  "image": {
+    "alt": "iPods",
+    "src": "http://static.shopify.com/collections/ipod.jpg?0"
+  },
+  "published_at": "2008-02-01T19:00:00-05:00",
+  "published_scope": "global",
+  "rules": {
+    "column": "variant_price",
+    "relation": "less_than",
+    "condition": "20"
+  },
+  "disjunctive": false,
+  "sort_order": "alpha-asc",
+  "template_suffix": null,
+  "title": "Smart iPods",
+  "updated_at": "2008-02-01T19:00:00-05:00"
+}
