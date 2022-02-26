@@ -13,7 +13,7 @@ class Shopify::Store
       hmac: params["hmac"],
       shop: params["shop"],
       timestamp: params["timestamp"],
-      code: params["code"],
+      code: params["code"]?,
     )
   end
 
