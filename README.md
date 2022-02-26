@@ -20,7 +20,27 @@ Crystal client for the Shopify API.
 require "shopify"
 ```
 
-TODO: Write usage instructions here
+1. Create App via [Shopify Partners](https://partners.shopify.com/)
+1. Configure (defaults shown)
+
+   ```crystal
+   # config/shopify.cr
+   Shopify.configure do |config|
+     config.api_key = ENV["SHOPIFY_API_KEY"]
+     config.secret = ENV["SHOPIFY_SECRET"]
+     config.scope = "read_customers,write_customers,read_orders,write_orders,read_products,write_products"
+     config.redirect_uri = "" # Required, String
+   end
+   ```
+
+1. Use [Store helper](https://the-business-factory.github.io/shopify.cr/Shopify/Store.html)
+   to get Store object, used later
+1. See Resource docs:
+
+   - [Customer](https://the-business-factory.github.io/shopify.cr/Shopify/Customer.html)
+   - [Order](https://the-business-factory.github.io/shopify.cr/Shopify/Order.html)
+   - [Product](https://the-business-factory.github.io/shopify.cr/Shopify/Product.html)
+   - [ProductVariant](https://the-business-factory.github.io/shopify.cr/Shopify/ProductVariant.html)
 
 ## Development
 

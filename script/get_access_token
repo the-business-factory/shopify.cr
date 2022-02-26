@@ -5,63 +5,7 @@ require "http"
 require "../src/shopify"
 
 Shopify.configure do |config|
-  config.api_key = ENV["SHOPIFY_API_KEY"]
-  config.secret = ENV["SHOPIFY_API_SECRET"]
-  config.scope = "read_customers,write_customers,read_orders,write_orders,read_products,write_products"
   config.redirect_uri = "http://localhost:8080/oauth/callback"
-end
-
-struct Shopify::AuthRequest
-  property \
-    hmac : String,
-    shop : String,
-    timestamp : String
-
-  delegate api_key, scope, redirect_uri, to: Shopify.settings
-
-  def initialize(@hmac : String, @shop : String, @timestamp : String)
-  end
-
-  def self.from_params(params)
-    new(
-      hmac: params["hmac"],
-      shop: params["shop"],
-      timestamp: params["timestamp"]
-    )
-  end
-
-  def auth_url
-    "https://#{shop}/admin/oauth/authorize?client_id=#{api_key}&scope=#{scope}&redirect_uri=#{redirect_uri}"
-  end
-end
-
-struct Shopify::AccessToken
-  property \
-    code : String,
-    shop : String
-
-  def initialize(@code : String, @shop : String)
-  end
-
-  def self.from_params(params)
-    new(
-      code: params["code"],
-      shop: params["shop"]
-    )
-  end
-
-  def access_token : String
-    response = HTTP::Client.post(
-      "https://#{shop}/admin/oauth/access_token",
-      form: {
-        "client_id"     => Shopify.settings.api_key,
-        "client_secret" => Shopify.settings.secret,
-        "code"          => code,
-      }
-    )
-
-    JSON.parse(response.body)["access_token"].as_s
-  end
 end
 
 code_received = false
@@ -69,31 +13,25 @@ code_received = false
 server = HTTP::Server.new do |context|
   case context.request.path
   when "/install"
-    Shopify::AuthRequest.from_params(
-      context.request.query_params
-    )
     context.response.status_code = 302
-    context.response.headers["Location"] = Shopify::AuthRequest.from_params(
+    context.response.headers["Location"] = Shopify::Store.from_params(
       context.request.query_params
-    ).auth_url
+    ).oauth_url
     context.response.content_type = "text/plain"
     context.response.print "Redirecting to Shopify OAuth..."
   when "/oauth/callback"
     code = context.request.query_params["code"]
-    access_token = Shopify::AccessToken.from_params(
-      context.request.query_params
-    ).access_token
     store = Shopify::Store.from_params(
       context.request.query_params
     )
     context.response.content_type = "text/plain"
     context.response.print "Authorization Code: #{code}\n"
-    context.response.print "Access Token: #{access_token}"
+    context.response.print "Access Token: #{store.access_token}"
     puts "Authorization code received: #{code}"
     puts "#"*20
     puts "# Copy pasta"
     puts "#"*20
-    puts "export SHOPIFY_ACCESS_TOKEN=\"#{access_token}\""
+    puts "export SHOPIFY_ACCESS_TOKEN=\"#{store.access_token}\""
     puts "export SHOPIFY_STORE=\"#{store.shop}\""
     code_received = true
   end
