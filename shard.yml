@@ -20,5 +20,5 @@ development_dependencies:
     github: icy-arctic-fox/spectator
     version: ~> 0.10
   vcr:
-    github: grepsedawk/vcr.cr
-    branch: flip-to-side-b
+    github: spoved/vcr.cr
+    version: ~> 0.5.2
