@@ -210,7 +210,34 @@
   </svg>
 </a>Usage</h2>
 <pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;shopify&quot;</span></code></pre>
-<p><span class="flag orange">TODO</span>  Write usage instructions here</p>
+<ol>
+<li>
+<p>Create App via <a href="https://partners.shopify.com/">Shopify Partners</a></p>
+</li>
+<li>
+<p>Configure (defaults shown)</p>
+<pre><code class="language-crystal"><span class="c"># config/shopify.cr</span>
+<span class="t">Shopify</span>.configure <span class="k">do</span> <span class="o">|</span>config<span class="o">|</span>
+  config.api_key <span class="o">=</span> <span class="t">ENV</span>[<span class="s">&quot;SHOPIFY_API_KEY&quot;</span>]
+  config.secret <span class="o">=</span> <span class="t">ENV</span>[<span class="s">&quot;SHOPIFY_SECRET&quot;</span>]
+  config.scope <span class="o">=</span> <span class="s">&quot;read_customers,write_customers,read_orders,write_orders,read_products,write_products&quot;</span>
+  config.redirect_uri <span class="o">=</span> <span class="s">&quot;&quot;</span> <span class="c"># Required, String</span>
+<span class="k">end</span></code></pre>
+</li>
+<li>
+<p>Use <a href="https://the-business-factory.github.io/shopify.cr/Shopify/Store.html">Store helper</a>
+to get Store object, used later</p>
+</li>
+<li>
+<p>See Resource docs:</p>
+<ul>
+<li><a href="https://the-business-factory.github.io/shopify.cr/Shopify/Customer.html">Customer</a></li>
+<li><a href="https://the-business-factory.github.io/shopify.cr/Shopify/Order.html">Order</a></li>
+<li><a href="https://the-business-factory.github.io/shopify.cr/Shopify/Product.html">Product</a></li>
+<li><a href="https://the-business-factory.github.io/shopify.cr/Shopify/ProductVariant.html">ProductVariant</a></li>
+</ul>
+</li>
+</ol>
 <h2><a id="development" class="anchor" href="#development">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
