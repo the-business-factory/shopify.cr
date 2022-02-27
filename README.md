@@ -34,7 +34,7 @@ require "shopify"
    ```
 
 1. Use [Store helper](https://the-business-factory.github.io/shopify.cr/Shopify/Store.html)
-   to get Store object, used later
+   to get Store object, used later [Example](https://github.com/the-business-factory/shopify.cr/blob/main/script/get_access_token)
 1. See Resource docs:
 
    - [Customer](https://the-business-factory.github.io/shopify.cr/Shopify/Customer.html)
