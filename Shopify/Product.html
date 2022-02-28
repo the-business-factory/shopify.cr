@@ -232,7 +232,7 @@
   </h2>
   
     
-      <a href="https://github.com/the-business-factory/shopify.cr/blob/70b0be57676a18bd3bf75daf59fc7e6edf55aca6/src/shopify/resources/product.cr#L2" target="_blank">
+      <a href="https://github.com/the-business-factory/shopify.cr/blob/227173fa461ae8bd0f9714760efef7d3f506b17f/src/shopify/resources/product.cr#L2" target="_blank">
         shopify/resources/product.cr
       </a>
     
@@ -273,14 +273,14 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#all%28domain%3AString%2Cheaders%3AHTTP%3A%3AHeaders%3Dheaders%29%3AArray%28Shopify%3A%3AProduct%29-class-method" class="signature"><strong>.all</strong>(domain : String, headers : HTTP::Headers = headers) : Array(Shopify::Product)</a>
+        <a href="#all%28domain%3AString%2Cdepth%3AInt32%3D20%2Cheaders%3AHTTP%3A%3AHeaders%3Dheaders%29%3AArray%28Shopify%3A%3AProduct%29-class-method" class="signature"><strong>.all</strong>(domain : String, depth : Int32 = <span class="n">20</span>, headers : HTTP::Headers = headers) : Array(Shopify::Product)</a>
         
           <div class="summary"><p>Used to return an array of products.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#all%28domain%3AString%2Cnext_page_uri%3AString%3F%3Dnil%2Cheaders%3AHTTP%3A%3AHeaders%3Dheaders%2C%26block%3Aself-%3E%29-class-method" class="signature"><strong>.all</strong>(domain : String, next_page_uri : String? = <span class="n">nil</span>, headers : HTTP::Headers = headers, &block : <span class="k">self</span> -> )</a>
+        <a href="#all%28domain%3AString%2Cnext_page_uri%3AString%3F%3Dnil%2Cdepth%3AInt32%3D20%2Cheaders%3AHTTP%3A%3AHeaders%3Dheaders%2C%26block%3Aself-%3E%29-class-method" class="signature"><strong>.all</strong>(domain : String, next_page_uri : String? = <span class="n">nil</span>, depth : Int32 = <span class="n">20</span>, headers : HTTP::Headers = headers, &block : <span class="k">self</span> -> )</a>
         
           <div class="summary"><p>Used to iterate over all products.</p></div>
         
@@ -613,7 +613,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/70b0be57676a18bd3bf75daf59fc7e6edf55aca6/src/shopify/resources/product.cr#L2" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/227173fa461ae8bd0f9714760efef7d3f506b17f/src/shopify/resources/product.cr#L2" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -630,40 +630,40 @@
     Class Method Detail
   </h2>
   
-    <div class="entry-detail" id="all(domain:String,headers:HTTP::Headers=headers):Array(Shopify::Product)-class-method">
+    <div class="entry-detail" id="all(domain:String,depth:Int32=20,headers:HTTP::Headers=headers):Array(Shopify::Product)-class-method">
       <div class="signature">
         
-        def self.<strong>all</strong>(domain : String, headers : HTTP::Headers = headers) : Array(<a href="../Shopify/Product.html">Shopify::Product</a>)
+        def self.<strong>all</strong>(domain : String, depth : Int32 = <span class="n">20</span>, headers : HTTP::Headers = headers) : Array(<a href="../Shopify/Product.html">Shopify::Product</a>)
 
-        <a class="method-permalink" href="#all%28domain%3AString%2Cheaders%3AHTTP%3A%3AHeaders%3Dheaders%29%3AArray%28Shopify%3A%3AProduct%29-class-method">#</a>
+        <a class="method-permalink" href="#all%28domain%3AString%2Cdepth%3AInt32%3D20%2Cheaders%3AHTTP%3A%3AHeaders%3Dheaders%29%3AArray%28Shopify%3A%3AProduct%29-class-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Used to return an array of products. Uses fibers to fetch pages concurrently.</p>
-<p><span class="flag purple">NOTE</span>  It is recommended to use <code>.all(domain, next_page_uri, headers, &amp;block)</code>
+<p><span class="flag purple">NOTE</span>  It is recommended to use <code><a href="../Shopify/Product.html#all%28domain%3AString%2Cnext_page_uri%3AString%3F%3Dnil%2Cdepth%3AInt32%3D20%2Cheaders%3AHTTP%3A%3AHeaders%3Dheaders%2C%26block%3Aself-%3E%29-class-method">.all(domain, next_page_uri, headers, &amp;block)</a></code>
 directly instead of this method as it is more performant.</p>
 <p>Generally, this is used with <code><a href="../Shopify/Product.html#with%28store%3AStore%29-class-method">.with(store)</a></code>:</p>
 <pre><code class="language-crystal"><span class="t">Shopify</span><span class="t">::</span><span class="t">Product</span>.<span class="k">with</span>(store).all <span class="c">#=&gt; Array(Shopify::Product)</span></code></pre>
 <p>But it can be used stand-alone, too:</p>
 <pre><code class="language-crystal"><span class="t">Shopify</span><span class="t">::</span><span class="t">Product</span>.all(domain, headers: headers) <span class="c">#=&gt; Array(Shopify::Product)</span></code></pre>
-<p>This just runs the <code>&amp;block</code> version of <code>.all(domain, next_page_uri, headers, &amp;block)</code> to create an array</p>
+<p>This just runs the <code>&amp;block</code> version of <code><a href="../Shopify/Product.html#all%28domain%3AString%2Cnext_page_uri%3AString%3F%3Dnil%2Cdepth%3AInt32%3D20%2Cheaders%3AHTTP%3A%3AHeaders%3Dheaders%2C%26block%3Aself-%3E%29-class-method">.all(domain, next_page_uri, headers, &amp;block)</a></code> to create an array</p>
         </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/70b0be57676a18bd3bf75daf59fc7e6edf55aca6/src/shopify/resources/product.cr#L4" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/227173fa461ae8bd0f9714760efef7d3f506b17f/src/shopify/resources/product.cr#L4" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="all(domain:String,next_page_uri:String?=nil,headers:HTTP::Headers=headers,&amp;block:self-&gt;)-class-method">
+    <div class="entry-detail" id="all(domain:String,next_page_uri:String?=nil,depth:Int32=20,headers:HTTP::Headers=headers,&amp;block:self-&gt;)-class-method">
       <div class="signature">
         
-        def self.<strong>all</strong>(domain : String, next_page_uri : String? = <span class="n">nil</span>, headers : HTTP::Headers = headers, &block : <span class="k">self</span> -> )
+        def self.<strong>all</strong>(domain : String, next_page_uri : String? = <span class="n">nil</span>, depth : Int32 = <span class="n">20</span>, headers : HTTP::Headers = headers, &block : <span class="k">self</span> -> )
 
-        <a class="method-permalink" href="#all%28domain%3AString%2Cnext_page_uri%3AString%3F%3Dnil%2Cheaders%3AHTTP%3A%3AHeaders%3Dheaders%2C%26block%3Aself-%3E%29-class-method">#</a>
+        <a class="method-permalink" href="#all%28domain%3AString%2Cnext_page_uri%3AString%3F%3Dnil%2Cdepth%3AInt32%3D20%2Cheaders%3AHTTP%3A%3AHeaders%3Dheaders%2C%26block%3Aself-%3E%29-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -687,7 +687,7 @@ directly instead of this method as it is more performant.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/70b0be57676a18bd3bf75daf59fc7e6edf55aca6/src/shopify/resources/product.cr#L4" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/227173fa461ae8bd0f9714760efef7d3f506b17f/src/shopify/resources/product.cr#L4" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -715,7 +715,7 @@ directly instead of this method as it is more performant.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/70b0be57676a18bd3bf75daf59fc7e6edf55aca6/src/shopify/resources/product.cr#L6" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/227173fa461ae8bd0f9714760efef7d3f506b17f/src/shopify/resources/product.cr#L6" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -743,7 +743,7 @@ directly instead of this method as it is more performant.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/70b0be57676a18bd3bf75daf59fc7e6edf55aca6/src/shopify/resources/product.cr#L3" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/227173fa461ae8bd0f9714760efef7d3f506b17f/src/shopify/resources/product.cr#L3" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -771,7 +771,7 @@ directly instead of this method as it is more performant.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/70b0be57676a18bd3bf75daf59fc7e6edf55aca6/src/shopify/resources/product.cr#L5" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/227173fa461ae8bd0f9714760efef7d3f506b17f/src/shopify/resources/product.cr#L5" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -787,7 +787,7 @@ directly instead of this method as it is more performant.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/70b0be57676a18bd3bf75daf59fc7e6edf55aca6/src/shopify/resources/product.cr#L10" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/227173fa461ae8bd0f9714760efef7d3f506b17f/src/shopify/resources/product.cr#L10" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -803,7 +803,7 @@ directly instead of this method as it is more performant.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/70b0be57676a18bd3bf75daf59fc7e6edf55aca6/src/shopify/resources/product.cr#L2" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/227173fa461ae8bd0f9714760efef7d3f506b17f/src/shopify/resources/product.cr#L2" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -831,7 +831,7 @@ directly instead of this method as it is more performant.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/70b0be57676a18bd3bf75daf59fc7e6edf55aca6/src/shopify/resources/product.cr#L14" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/227173fa461ae8bd0f9714760efef7d3f506b17f/src/shopify/resources/product.cr#L14" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -847,7 +847,7 @@ directly instead of this method as it is more performant.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/70b0be57676a18bd3bf75daf59fc7e6edf55aca6/src/shopify/resources/product.cr#L14" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/227173fa461ae8bd0f9714760efef7d3f506b17f/src/shopify/resources/product.cr#L14" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -863,7 +863,7 @@ directly instead of this method as it is more performant.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/70b0be57676a18bd3bf75daf59fc7e6edf55aca6/src/shopify/resources/product.cr#L32" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/227173fa461ae8bd0f9714760efef7d3f506b17f/src/shopify/resources/product.cr#L32" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -879,7 +879,7 @@ directly instead of this method as it is more performant.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/70b0be57676a18bd3bf75daf59fc7e6edf55aca6/src/shopify/resources/product.cr#L14" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/227173fa461ae8bd0f9714760efef7d3f506b17f/src/shopify/resources/product.cr#L14" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -895,7 +895,7 @@ directly instead of this method as it is more performant.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/70b0be57676a18bd3bf75daf59fc7e6edf55aca6/src/shopify/resources/product.cr#L14" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/227173fa461ae8bd0f9714760efef7d3f506b17f/src/shopify/resources/product.cr#L14" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -919,7 +919,7 @@ directly instead of this method as it is more performant.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/70b0be57676a18bd3bf75daf59fc7e6edf55aca6/src/shopify/resources/product.cr#L8" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/227173fa461ae8bd0f9714760efef7d3f506b17f/src/shopify/resources/product.cr#L8" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -935,7 +935,7 @@ directly instead of this method as it is more performant.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/70b0be57676a18bd3bf75daf59fc7e6edf55aca6/src/shopify/resources/product.cr#L14" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/227173fa461ae8bd0f9714760efef7d3f506b17f/src/shopify/resources/product.cr#L14" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -951,7 +951,7 @@ directly instead of this method as it is more performant.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/70b0be57676a18bd3bf75daf59fc7e6edf55aca6/src/shopify/resources/product.cr#L14" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/227173fa461ae8bd0f9714760efef7d3f506b17f/src/shopify/resources/product.cr#L14" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -967,7 +967,7 @@ directly instead of this method as it is more performant.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/70b0be57676a18bd3bf75daf59fc7e6edf55aca6/src/shopify/resources/product.cr#L14" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/227173fa461ae8bd0f9714760efef7d3f506b17f/src/shopify/resources/product.cr#L14" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -983,7 +983,7 @@ directly instead of this method as it is more performant.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/70b0be57676a18bd3bf75daf59fc7e6edf55aca6/src/shopify/resources/product.cr#L14" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/227173fa461ae8bd0f9714760efef7d3f506b17f/src/shopify/resources/product.cr#L14" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -999,7 +999,7 @@ directly instead of this method as it is more performant.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/70b0be57676a18bd3bf75daf59fc7e6edf55aca6/src/shopify/resources/product.cr#L14" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/227173fa461ae8bd0f9714760efef7d3f506b17f/src/shopify/resources/product.cr#L14" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1015,7 +1015,7 @@ directly instead of this method as it is more performant.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/70b0be57676a18bd3bf75daf59fc7e6edf55aca6/src/shopify/resources/product.cr#L14" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/227173fa461ae8bd0f9714760efef7d3f506b17f/src/shopify/resources/product.cr#L14" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1031,7 +1031,7 @@ directly instead of this method as it is more performant.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/70b0be57676a18bd3bf75daf59fc7e6edf55aca6/src/shopify/resources/product.cr#L14" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/227173fa461ae8bd0f9714760efef7d3f506b17f/src/shopify/resources/product.cr#L14" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1047,7 +1047,7 @@ directly instead of this method as it is more performant.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/70b0be57676a18bd3bf75daf59fc7e6edf55aca6/src/shopify/resources/product.cr#L14" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/227173fa461ae8bd0f9714760efef7d3f506b17f/src/shopify/resources/product.cr#L14" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1063,7 +1063,7 @@ directly instead of this method as it is more performant.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/70b0be57676a18bd3bf75daf59fc7e6edf55aca6/src/shopify/resources/product.cr#L14" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/227173fa461ae8bd0f9714760efef7d3f506b17f/src/shopify/resources/product.cr#L14" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1079,7 +1079,7 @@ directly instead of this method as it is more performant.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/70b0be57676a18bd3bf75daf59fc7e6edf55aca6/src/shopify/resources/product.cr#L14" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/227173fa461ae8bd0f9714760efef7d3f506b17f/src/shopify/resources/product.cr#L14" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1095,7 +1095,7 @@ directly instead of this method as it is more performant.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/70b0be57676a18bd3bf75daf59fc7e6edf55aca6/src/shopify/resources/product.cr#L14" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/227173fa461ae8bd0f9714760efef7d3f506b17f/src/shopify/resources/product.cr#L14" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1111,7 +1111,7 @@ directly instead of this method as it is more performant.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/70b0be57676a18bd3bf75daf59fc7e6edf55aca6/src/shopify/resources/product.cr#L14" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/227173fa461ae8bd0f9714760efef7d3f506b17f/src/shopify/resources/product.cr#L14" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1127,7 +1127,7 @@ directly instead of this method as it is more performant.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/70b0be57676a18bd3bf75daf59fc7e6edf55aca6/src/shopify/resources/product.cr#L14" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/227173fa461ae8bd0f9714760efef7d3f506b17f/src/shopify/resources/product.cr#L14" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1143,7 +1143,7 @@ directly instead of this method as it is more performant.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/70b0be57676a18bd3bf75daf59fc7e6edf55aca6/src/shopify/resources/product.cr#L14" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/227173fa461ae8bd0f9714760efef7d3f506b17f/src/shopify/resources/product.cr#L14" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1159,7 +1159,7 @@ directly instead of this method as it is more performant.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/70b0be57676a18bd3bf75daf59fc7e6edf55aca6/src/shopify/resources/product.cr#L14" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/227173fa461ae8bd0f9714760efef7d3f506b17f/src/shopify/resources/product.cr#L14" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1175,7 +1175,7 @@ directly instead of this method as it is more performant.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/70b0be57676a18bd3bf75daf59fc7e6edf55aca6/src/shopify/resources/product.cr#L14" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/227173fa461ae8bd0f9714760efef7d3f506b17f/src/shopify/resources/product.cr#L14" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1191,7 +1191,7 @@ directly instead of this method as it is more performant.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/70b0be57676a18bd3bf75daf59fc7e6edf55aca6/src/shopify/resources/product.cr#L14" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/227173fa461ae8bd0f9714760efef7d3f506b17f/src/shopify/resources/product.cr#L14" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1207,7 +1207,7 @@ directly instead of this method as it is more performant.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/70b0be57676a18bd3bf75daf59fc7e6edf55aca6/src/shopify/resources/product.cr#L14" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/227173fa461ae8bd0f9714760efef7d3f506b17f/src/shopify/resources/product.cr#L14" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1223,7 +1223,7 @@ directly instead of this method as it is more performant.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/70b0be57676a18bd3bf75daf59fc7e6edf55aca6/src/shopify/resources/product.cr#L14" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/227173fa461ae8bd0f9714760efef7d3f506b17f/src/shopify/resources/product.cr#L14" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1239,7 +1239,7 @@ directly instead of this method as it is more performant.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/70b0be57676a18bd3bf75daf59fc7e6edf55aca6/src/shopify/resources/product.cr#L14" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/227173fa461ae8bd0f9714760efef7d3f506b17f/src/shopify/resources/product.cr#L14" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1255,7 +1255,7 @@ directly instead of this method as it is more performant.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/70b0be57676a18bd3bf75daf59fc7e6edf55aca6/src/shopify/resources/product.cr#L14" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/227173fa461ae8bd0f9714760efef7d3f506b17f/src/shopify/resources/product.cr#L14" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1271,7 +1271,7 @@ directly instead of this method as it is more performant.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/70b0be57676a18bd3bf75daf59fc7e6edf55aca6/src/shopify/resources/product.cr#L14" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/227173fa461ae8bd0f9714760efef7d3f506b17f/src/shopify/resources/product.cr#L14" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1294,7 +1294,7 @@ directly instead of this method as it is more performant.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/70b0be57676a18bd3bf75daf59fc7e6edf55aca6/src/shopify/resources/product.cr#L7" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/227173fa461ae8bd0f9714760efef7d3f506b17f/src/shopify/resources/product.cr#L7" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1310,7 +1310,7 @@ directly instead of this method as it is more performant.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/70b0be57676a18bd3bf75daf59fc7e6edf55aca6/src/shopify/resources/product.cr#L14" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/227173fa461ae8bd0f9714760efef7d3f506b17f/src/shopify/resources/product.cr#L14" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1326,7 +1326,7 @@ directly instead of this method as it is more performant.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/70b0be57676a18bd3bf75daf59fc7e6edf55aca6/src/shopify/resources/product.cr#L14" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/227173fa461ae8bd0f9714760efef7d3f506b17f/src/shopify/resources/product.cr#L14" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1342,7 +1342,7 @@ directly instead of this method as it is more performant.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/70b0be57676a18bd3bf75daf59fc7e6edf55aca6/src/shopify/resources/product.cr#L14" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/227173fa461ae8bd0f9714760efef7d3f506b17f/src/shopify/resources/product.cr#L14" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1358,7 +1358,7 @@ directly instead of this method as it is more performant.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/70b0be57676a18bd3bf75daf59fc7e6edf55aca6/src/shopify/resources/product.cr#L14" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/227173fa461ae8bd0f9714760efef7d3f506b17f/src/shopify/resources/product.cr#L14" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1374,7 +1374,7 @@ directly instead of this method as it is more performant.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/70b0be57676a18bd3bf75daf59fc7e6edf55aca6/src/shopify/resources/product.cr#L14" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/227173fa461ae8bd0f9714760efef7d3f506b17f/src/shopify/resources/product.cr#L14" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1390,7 +1390,7 @@ directly instead of this method as it is more performant.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/the-business-factory/shopify.cr/blob/70b0be57676a18bd3bf75daf59fc7e6edf55aca6/src/shopify/resources/product.cr#L14" target="_blank">View source</a>]
+          [<a href="https://github.com/the-business-factory/shopify.cr/blob/227173fa461ae8bd0f9714760efef7d3f506b17f/src/shopify/resources/product.cr#L14" target="_blank">View source</a>]
         
       </div>
     </div>
