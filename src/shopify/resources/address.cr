@@ -10,14 +10,14 @@ class Shopify::Address
   property company : String?
   property address1 : String?
   property address2 : String?
-  property city : String
-  property province : String
-  property country : String
-  property zip : String
+  property city : String?
+  property province : String?
+  property country : String?
+  property zip : String?
   property phone : String?
   property name : String
-  property province_code : String
-  property country_code : String
-  property country_name : String
+  property province_code : String?
+  property country_code : String?
+  property country_name : String?
   property default : Bool
 end

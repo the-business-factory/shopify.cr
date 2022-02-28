@@ -101,10 +101,10 @@ abstract class Shopify::Resource
     # ```
     #
     # This just runs the `&block` version of `.all(domain, next_page_uri, headers, &block)` to create an array
-    def self.all(domain : String, headers : HTTP::Headers = headers) : Array({{@type.id}})
+    def self.all(domain : String, depth : Int32 = 20, headers : HTTP::Headers = headers) : Array({{@type.id}})
       resources = [] of self
 
-      all(domain, headers: headers) do |resource|
+      all(domain, depth: depth, headers: headers) do |resource|
         resources << resource
       end
 
@@ -138,9 +138,12 @@ abstract class Shopify::Resource
     def self.all(
       domain : String,
       next_page_uri : String? = nil,
+      depth : Int32 = 20,
       headers : HTTP::Headers = headers,
       &block : self ->
     )
+      return if depth <= 0
+
       ErroringResponse.new(
         HTTP::Client.get(
           next_page_uri || uri(domain),
@@ -150,7 +153,7 @@ abstract class Shopify::Resource
         channel = Channel(Nil).new
         spawn do
           NextPreviousParser.new(response.headers.fetch("Link", "")).next_link.try do |next_page|
-            all(domain, next_page, headers, &block)
+            all(domain, next_page, depth - 1, headers, &block)
           end
           channel.send(nil)
         end
