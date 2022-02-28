@@ -10,12 +10,12 @@ class Shopify::WithStore(TResource)
 
   forward_missing_to TResource
 
-  def all
-    TResource.all(@store.shop, new_headers).map &.tap(&.store=(@store))
+  def all(depth : Int32 = 20)
+    TResource.all(@store.shop, depth, new_headers).map &.tap(&.store=(@store))
   end
 
-  def all(page : String? = nil, &block : TResource ->)
-    TResource.all(@store.shop, page, new_headers) do |resource|
+  def all(page : String? = nil, depth : Int64? = nil, &block : TResource ->)
+    TResource.all(@store.shop, page, deptch, new_headers) do |resource|
       block.call(resource.tap(&.store=(@store)))
     end
   end
