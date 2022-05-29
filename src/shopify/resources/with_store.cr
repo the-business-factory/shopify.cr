@@ -15,7 +15,7 @@ class Shopify::WithStore(TResource)
   end
 
   def all(page : String? = nil, depth : Int64? = nil, &block : TResource ->)
-    TResource.all(@store.shop, page, deptch, new_headers) do |resource|
+    TResource.all(@store.shop, page, depth, new_headers) do |resource|
       block.call(resource.tap(&.store=(@store)))
     end
   end
