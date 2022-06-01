@@ -26,7 +26,7 @@ class Shopify::Product < Shopify::Resource
     template_suffix : String?,
     title : String,
     updated_at : Time,
-    variants : Array(JSON::Any),
+    variants : Array(Shopify::ProductVariant),
     vendor : String
 
   def create_product_variant(body : String) : Shopify::ProductVariant
