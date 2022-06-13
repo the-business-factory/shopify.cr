@@ -250,7 +250,7 @@ abstract class Shopify::Resource
       JSON::PullParser.new(
         ErroringResponse.new(
           HTTP::Client.get(
-            uri(domain, "/search").tap &.query = "?query=#{query}",
+            uri(domain, "/search").tap &.query = "query=#{query}",
             headers
           )
         ).body

@@ -13,7 +13,7 @@ class Shopify::ProductVariant < Shopify::Resource
     id : Int64,
     image_id : Int64?,
     inventory_item_id : Int64,
-    inventory_management : String,
+    inventory_management : String?,
     inventory_policy : String,
     inventory_quantity : Int64,
     old_inventory_quantity : Int64,
